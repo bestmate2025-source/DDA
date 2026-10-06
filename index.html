@@ -3,23 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DDA Aesthetic LLC | Premium Aesthetic Equipment Distributor UAE</title>
+  <title>DDS Aesthetic LLC | Premium Aesthetic Equipment Distributor UAE</title>
   <meta name="description" content="DDS Aesthetic LLC – Authorized distributor of premium aesthetic, laser, and skincare equipment across UAE & GCC. Alexandrite Laser, HIFU, PicoSecond, IPL SHR, and more.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
+ <style>
     /* ---------- RESET & VARIABLES ---------- */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --navy: #0a1628;
       --navy-light: #16294a;
-      --gold: #c9a55a;
-      --gold-light: #e0c078;
-      --accent: #0d9488;
-      --accent-light: #14b8a6;
+      /* Brand palette (from DDA logo) -- change colors here only */
+      --brand-pink: #E91E63;
+      --brand-pink-light: #F06292;
+      --brand-blue: #00B8D4;
+      --brand-blue-light: #4FC3F7;
+      --brand-gradient: linear-gradient(135deg, var(--brand-pink) 0%, var(--brand-blue) 100%);
+      --brand-gradient-soft: linear-gradient(135deg, var(--brand-pink-light) 0%, var(--brand-blue-light) 100%);
+      --brand-gradient-h: linear-gradient(90deg, var(--brand-pink) 0%, var(--brand-blue) 100%);
+      --brand-gradient-h-soft: linear-gradient(90deg, var(--brand-pink-light) 0%, var(--brand-blue-light) 100%);
+      --brand-gradient-v: linear-gradient(180deg, var(--brand-pink) 0%, var(--brand-blue) 100%);
+      --brand-pink-bg: #FDE8F0;
+      --brand-blue-bg: #E0F7FA;
+      --brand-card-fill: linear-gradient(#ffffff, #ffffff);
+      --brand-glow: -4px 12px 30px -10px rgba(233,30,99,0.28), 4px 12px 30px -10px rgba(0,184,212,0.28);
+      --accent: var(--brand-blue);
+      --accent-light: var(--brand-blue-light);
       --grey-bg: #f8fafc;
       --grey-border: #e9edf2;
       --text-dark: #0f172a;
@@ -58,28 +70,28 @@
 
     .section-label {
       font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+      text-transform: uppercase; color: var(--brand-pink); margin-bottom: 8px;
     }
 
     /* ---------- BUTTONS ---------- */
     .btn-primary {
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-      color: var(--navy); padding: 12px 28px; border-radius: 50px;
+      background: var(--brand-gradient);
+      color: #fff; padding: 12px 28px; border-radius: 50px;
       font-weight: 600; font-size: 0.95rem;
-      box-shadow: 0 6px 14px rgba(201, 165, 90, 0.25);
+      box-shadow: 0 6px 16px -4px rgba(233, 30, 99, 0.40);
     }
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(201, 165, 90, 0.4);
+      box-shadow: 0 12px 28px -6px rgba(233, 30, 99, 0.50);
     }
 
     .btn-outline {
       background: transparent; color: var(--navy);
-      border: 1.5px solid var(--grey-border);
+      border: 1.5px solid var(--brand-pink);
       padding: 11px 26px; border-radius: 50px;
       font-weight: 500; font-size: 0.95rem;
     }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-outline:hover { border-color: var(--brand-pink); color: var(--brand-pink); background: var(--brand-pink-bg); }
 
     .btn-whatsapp {
       background-color: #25D366; color: white;
@@ -115,8 +127,8 @@
       padding: 10px 14px; border-radius: 8px; color: var(--navy);
       position: relative; transition: var(--transition); white-space: nowrap;
     }
-    .nav-links > a:hover { color: var(--accent); background: rgba(13,148,136,0.06); }
-    .nav-links > a.active { color: var(--accent); }
+    .nav-links > a:hover { color: var(--brand-pink); background: rgba(233,30,99,0.06); }
+    .nav-links > a.active { color: var(--brand-pink); }
 
     /* DROPDOWN */
     .dropdown { position: relative; }
@@ -125,7 +137,7 @@
       display: inline-flex; align-items: center; gap: 6px;
       font-weight: 500; font-size: 0.88rem; white-space: nowrap;
     }
-    .dropdown > a:hover { color: var(--accent); background: rgba(13,148,136,0.06); }
+    .dropdown > a:hover { color: var(--brand-pink); background: rgba(233,30,99,0.06); }
     .dropdown > a i { font-size: 0.7rem; transition: transform 0.25s; }
     .dropdown:hover > a i { transform: rotate(180deg); }
 
@@ -146,7 +158,7 @@
       font-size: 0.85rem; color: var(--navy); font-weight: 500;
       transition: var(--transition);
     }
-    .dropdown-menu a:hover { background: #f1f5f9; color: var(--accent); padding-left: 18px; }
+    .dropdown-menu a:hover { background: var(--brand-pink-bg); color: var(--brand-pink); padding-left: 18px; }
 
     .nav-actions { display: flex; gap: 10px; align-items: center; }
     .hamburger { display: none; font-size: 1.6rem; color: var(--navy); background: none; }
@@ -160,7 +172,7 @@
     .hero::before {
       content: ''; position: absolute; top: -200px; right: -200px;
       width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(201,165,90,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(233,30,99,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero-grid {
@@ -169,46 +181,52 @@
     }
     .hero-label {
       display: inline-flex; align-items: center; gap: 10px;
-      background: rgba(201,165,90,0.1); border: 1px solid rgba(201,165,90,0.25);
-      color: var(--gold-light); font-size: 0.72rem; font-weight: 600;
+      background: rgba(233,30,99,0.1); border: 1px solid rgba(233,30,99,0.25);
+      color: var(--brand-pink-light); font-size: 0.72rem; font-weight: 600;
       letter-spacing: 0.18em; text-transform: uppercase;
       padding: 8px 18px; border-radius: 50px; margin-bottom: 28px;
     }
     .hero-label::before {
       content: ''; width: 6px; height: 6px; border-radius: 50%;
-      background: var(--gold); box-shadow: 0 0 12px var(--gold);
+      background: var(--brand-pink); box-shadow: 0 0 12px var(--brand-pink);
     }
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: 3.6rem; font-weight: 600; line-height: 1.08;
       letter-spacing: -0.02em; margin-bottom: 24px; color: white;
     }
-    .hero h1 .highlight { color: var(--gold-light); font-style: italic; font-weight: 500; }
+    .hero h1 .highlight {
+      background: var(--brand-gradient-h-soft);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+      -webkit-box-decoration-break: clone; box-decoration-break: clone;
+      font-style: italic; font-weight: 500;
+    }
     .hero p {
       font-size: 1.08rem; line-height: 1.7; color: #a8b6c9;
       max-width: 540px; margin-bottom: 40px; font-weight: 300;
     }
     .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
     .btn-primary-hero {
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-      color: var(--navy); padding: 16px 34px; border-radius: 50px;
+      background: var(--brand-gradient);
+      color: #fff; padding: 16px 34px; border-radius: 50px;
       font-weight: 600; font-size: 0.95rem;
-      box-shadow: 0 10px 30px rgba(201,165,90,0.3);
+      box-shadow: 0 10px 30px -6px rgba(233,30,99,0.40);
     }
-    .btn-primary-hero:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(201,165,90,0.5); }
+    .btn-primary-hero:hover { transform: translateY(-3px); box-shadow: 0 16px 40px -8px rgba(233,30,99,0.55); }
     .btn-outline-hero {
       background: transparent; color: white;
       border: 1.5px solid rgba(255,255,255,0.25);
       padding: 15px 32px; border-radius: 50px; font-weight: 500; font-size: 0.95rem;
     }
-    .btn-outline-hero:hover { border-color: var(--gold); color: var(--gold-light); background: rgba(201,165,90,0.05); }
+    .btn-outline-hero:hover { border-color: var(--brand-pink-light); color: var(--brand-pink-light); background: rgba(233,30,99,0.06); }
 
     .trust-bar {
       display: flex; gap: 36px; padding-top: 32px;
       border-top: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap;
     }
     .trust-item { display: flex; align-items: center; gap: 12px; }
-    .trust-item i { color: var(--gold); font-size: 1.15rem; }
+    .trust-item i { color: var(--brand-pink); font-size: 1.15rem; }
     .trust-item span { font-size: 0.85rem; color: #a8b6c9; }
     .trust-item strong { color: white; font-weight: 600; }
 
@@ -225,14 +243,14 @@
     .hero-badge {
       position: absolute; bottom: 24px; left: 24px; right: 24px;
       background: rgba(10,22,40,0.85); backdrop-filter: blur(20px);
-      border: 1px solid rgba(201,165,90,0.3); border-radius: 16px;
+      border: 1px solid rgba(240,98,146,0.3); border-radius: 16px;
       padding: 18px 22px; display: flex; align-items: center; gap: 16px; z-index: 2;
     }
     .hero-badge-icon {
       width: 44px; height: 44px; border-radius: 12px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      background: var(--brand-gradient);
       display: flex; align-items: center; justify-content: center;
-      color: var(--navy); font-size: 1.2rem; flex-shrink: 0;
+      color: #fff; font-size: 1.2rem; flex-shrink: 0;
     }
     .hero-badge-text strong { display: block; color: white; font-size: 0.95rem; font-weight: 600; margin-bottom: 2px; }
     .hero-badge-text span { font-size: 0.78rem; color: #a8b6c9; }
@@ -258,11 +276,16 @@
       display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px;
     }
     .category-card {
-      background: white; border-radius: var(--radius);
+      border: 2px solid transparent;
+      background: var(--brand-card-fill) padding-box, var(--brand-gradient-soft) border-box;
+      border-radius: var(--radius);
       box-shadow: var(--shadow-sm); overflow: hidden;
-      transition: var(--transition); border: 1px solid var(--grey-border); cursor: pointer;
+      transition: var(--transition); cursor: pointer;
     }
-    .category-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: rgba(13,148,136,0.28); }
+    .category-card:hover {
+      transform: translateY(-6px); box-shadow: var(--brand-glow);
+      background: var(--brand-card-fill) padding-box, var(--brand-gradient) border-box;
+    }
     .category-img { height: 160px; background: #eef2f6; overflow: hidden; }
     .category-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
     .category-card:hover .category-img img { transform: scale(1.05); }
@@ -271,28 +294,33 @@
     .category-info p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px; }
     .category-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--text-muted); }
     .category-meta span { background: #f1f5f9; padding: 4px 10px; border-radius: 20px; font-weight: 500; }
-    .view-products { font-weight: 600; color: var(--accent); font-size: 0.85rem; display: flex; align-items: center; gap: 4px; }
+    .view-products { font-weight: 600; color: var(--brand-pink); font-size: 0.85rem; display: flex; align-items: center; gap: 4px; }
 
     /* ---------- FEATURED PRODUCTS ---------- */
     .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
     .product-card {
-      background: white; border-radius: var(--radius);
-      border: 1px solid var(--grey-border); overflow: hidden;
+      position: relative;
+      border: 2px solid transparent;
+      background: var(--brand-card-fill) padding-box, var(--brand-gradient-soft) border-box;
+      border-radius: var(--radius); overflow: hidden;
       transition: var(--transition); display: flex; flex-direction: column;
     }
-    .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(13,148,136,0.28); }
+    .product-card:hover {
+      transform: translateY(-4px); box-shadow: var(--brand-glow);
+      background: var(--brand-card-fill) padding-box, var(--brand-gradient) border-box;
+    }
     .product-img { height: 200px; background: #f1f5f9; overflow: hidden; }
     .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
     .product-card:hover .product-img img { transform: scale(1.03); }
     .product-info { padding: 18px; flex: 1; display: flex; flex-direction: column; }
-    .product-category { font-size: 0.75rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 6px; }
+    .product-category { font-size: 0.75rem; color: var(--brand-pink); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 6px; }
     .product-name { font-size: 1rem; font-weight: 600; margin-bottom: 6px; color: var(--navy); }
     .product-desc { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4; }
-    .product-code { font-size: 0.7rem; color: #94a3b8; margin-bottom: 12px; background: #f8fafc; display: inline-block; padding: 2px 8px; border-radius: 12px; }
+    .product-code { font-size: 0.7rem; color: var(--brand-pink); margin-bottom: 12px; background: var(--brand-pink-bg); display: inline-block; padding: 2px 8px; border-radius: 12px; }
     .product-actions { margin-top: auto; display: flex; gap: 8px; flex-wrap: wrap; }
     .btn-small { padding: 8px 12px; font-size: 0.75rem; border-radius: 30px; font-weight: 500; }
     .btn-small-outline { border: 1px solid var(--grey-border); background: white; color: var(--navy); }
-    .btn-small-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-small-outline:hover { border-color: var(--brand-pink); color: var(--brand-pink); }
 
     /* ---------- SEARCH BAR ---------- */
     .search-section {
@@ -306,7 +334,7 @@
       box-shadow: 0 10px 28px rgba(11,26,46,0.07); border: 1px solid #e2e8f0;
       max-width: 900px; margin: 0 auto;
     }
-    .search-bar i { color: #94a3b8; }
+    .search-bar i { color: var(--brand-pink); }
     .search-bar input {
       flex: 1; border: none; padding: 12px 0; font-size: 0.95rem;
       min-width: 200px; outline: none; background: transparent;
@@ -316,6 +344,7 @@
       border-radius: 40px; font-size: 0.8rem; color: var(--navy);
       font-weight: 500; outline: none; cursor: pointer;
     }
+    .filter-select:focus, .filter-select:focus-visible { outline: 2px solid var(--brand-blue); outline-offset: 1px; }
     .search-count { font-size: 0.82rem; color: var(--text-muted); margin-top: 10px; text-align: center; }
 
     /* ---------- BRANDS / INDUSTRIES ---------- */
@@ -323,13 +352,27 @@
       display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 24px;
     }
     .brand-card, .industry-card {
-      background: white; border: 1px solid var(--grey-border);
+      border: 2px solid transparent;
+      background: var(--brand-card-fill) padding-box, var(--brand-gradient-soft) border-box;
       border-radius: var(--radius-sm); padding: 24px 16px;
       text-align: center; transition: var(--transition);
     }
-    .brand-card:hover, .industry-card:hover { border-color: var(--accent-light); box-shadow: var(--shadow-sm); }
-    .brand-logo { height: 60px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; color: var(--navy-light); }
-    .industry-card i { font-size: 2rem; color: var(--accent); margin-bottom: 12px; }
+    .brand-card:hover, .industry-card:hover {
+      background: var(--brand-card-fill) padding-box, var(--brand-gradient) border-box;
+      box-shadow: 0 0 0 1px rgba(233,30,99,0.10), var(--brand-glow);
+    }
+    .brand-logo {
+      height: 60px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;
+      background: var(--brand-gradient-h);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    .industry-card i {
+      width: 56px; height: 56px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px; font-size: 1.4rem; color: #fff;
+      background: var(--brand-gradient);
+    }
 
     /* ---------- FEATURES ---------- */
     .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
@@ -339,9 +382,9 @@
     }
     .feature-item:hover { border-color: var(--accent-light); box-shadow: var(--shadow-sm); }
     .feature-icon {
-      width: 56px; height: 56px; background: #ecfdf5; border-radius: 16px;
+      width: 56px; height: 56px; background: var(--brand-blue-bg); border-radius: 16px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem; color: var(--accent); margin: 0 auto 20px;
+      font-size: 1.6rem; color: var(--brand-blue); margin: 0 auto 20px;
     }
     .feature-item h4 { margin-bottom: 10px; font-size: 1.1rem; }
     .feature-item p { color: var(--text-muted); font-size: 0.9rem; }
@@ -350,6 +393,10 @@
     .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
     .stat-item { text-align: center; background: white; padding: 24px 12px; border-radius: var(--radius-sm); border: 1px solid var(--grey-border); }
     .stat-number { font-size: 2.4rem; font-weight: 700; color: var(--navy); letter-spacing: -0.03em; }
+    .stat-number::after {
+      content: ''; display: block; width: 36px; height: 3px;
+      margin: 10px auto 0; border-radius: 3px; background: var(--brand-gradient-h);
+    }
     .stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 6px; }
 
     /* ---------- CTA BAND ---------- */
@@ -366,14 +413,14 @@
     .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
     .footer h4 { color: white; font-size: 1rem; margin-bottom: 20px; letter-spacing: 0.02em; }
     .footer a { display: block; margin-bottom: 10px; font-size: 0.9rem; color: #b0c4de; }
-    .footer a:hover { color: white; }
+    .footer a:hover { color: var(--brand-pink-light); }
     .social-icons { display: flex; gap: 12px; margin-top: 16px; }
     .social-icons a {
       width: 36px; height: 36px; background: rgba(255,255,255,0.08);
       border-radius: 50%; display: flex; align-items: center;
       justify-content: center; font-size: 1rem; color: white; transition: var(--transition);
     }
-    .social-icons a:hover { background: var(--gold); }
+    .social-icons a:hover { background: var(--brand-gradient); color: #fff; }
 
     /* ---------- FLOATING WHATSAPP ---------- */
     .floating-whatsapp {
@@ -429,8 +476,8 @@
       cursor: pointer; border: 2px solid transparent;
       transition: var(--transition); aspect-ratio: 1/1;
     }
-    .gallery-thumb:hover { border-color: var(--gold); }
-    .gallery-thumb.active { border-color: var(--gold); }
+    .gallery-thumb:hover { border-color: var(--brand-pink-light); }
+    .gallery-thumb.active { border-color: var(--brand-pink); }
     .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
 
     .gallery-nav {
@@ -451,7 +498,7 @@
       font-size: 0.72rem; background: #f1f5f9; color: #475569;
       padding: 5px 12px; border-radius: 20px; font-weight: 600;
     }
-    .detail-badge.gold { background: rgba(201,165,90,0.15); color: #8a6d2b; }
+    .detail-badge.brand, .detail-badge.gold { background: var(--brand-pink-bg); color: var(--brand-pink); }
     .detail-badge.green { background: #ecfdf5; color: #0d9488; }
     .product-detail-info p.desc {
       color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 22px;
@@ -495,9 +542,9 @@
     }
     .contact-item-icon {
       width: 44px; height: 44px; border-radius: 12px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      background: var(--brand-gradient);
       display: flex; align-items: center; justify-content: center;
-      color: var(--navy); font-size: 1.1rem; flex-shrink: 0;
+      color: #fff; font-size: 1.1rem; flex-shrink: 0;
     }
     .contact-item-text strong { display: block; color: var(--navy); font-size: 0.9rem; margin-bottom: 2px; }
     .contact-item-text span { font-size: 0.85rem; color: var(--text-muted); }
@@ -529,7 +576,7 @@
       transition: var(--transition);
     }
     .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-      border-color: var(--accent); box-shadow: 0 0 0 3px rgba(13,148,136,0.1);
+      border-color: var(--brand-blue); box-shadow: 0 0 0 3px rgba(0,184,212,0.15);
     }
     .form-group textarea { min-height: 120px; resize: vertical; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -587,7 +634,7 @@
       display: block; padding: 12px 14px; border-radius: 9px;
       font-weight: 500; color: var(--navy); font-size: 0.9rem;
     }
-    .mobile-menu-panel a:hover { background: #f1f5f9; color: var(--accent); }
+    .mobile-menu-panel a:hover { background: var(--brand-pink-bg); color: var(--brand-pink); }
     .mobile-menu-panel .sub { padding-left: 28px; font-size: 0.85rem; color: var(--text-muted); }
 
     .page-view { display: none; }
@@ -601,7 +648,262 @@
       box-shadow: var(--shadow-md);
     }
     .back-top.show { opacity: 1; pointer-events: auto; }
+	    .back-top.show { opacity: 1; pointer-events: auto; }
+
+    /* ============ AI ASSISTANT ============ */
+    .ai-toggle {
+      position: fixed; bottom: 24px; left: 24px;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light)) padding-box, var(--brand-gradient) border-box;
+      color: white; font-size: 1.5rem; z-index: 998;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 10px 30px rgba(10,22,40,0.35);
+      border: 2px solid transparent;
+      transition: var(--transition); cursor: pointer;
+    }
+    .ai-toggle:hover { transform: scale(1.08); }
+    .ai-toggle-badge {
+      position: absolute; top: -4px; right: -4px;
+      background: var(--brand-gradient); color: #fff;
+      font-size: 0.6rem; font-weight: 800;
+      padding: 3px 7px; border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    .ai-panel {
+      position: fixed; bottom: 96px; left: 24px;
+      width: 380px; max-width: calc(100vw - 32px);
+      height: 560px; max-height: calc(100vh - 140px);
+      background: white; border-radius: 20px;
+      box-shadow: 0 30px 80px rgba(10,22,40,0.3);
+      display: flex; flex-direction: column;
+      z-index: 997; overflow: hidden;
+      opacity: 0; visibility: hidden;
+      transform: translateY(20px) scale(0.96);
+      transition: var(--transition);
+      border: 1px solid var(--grey-border);
+    }
+    .ai-panel.open {
+      opacity: 1; visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .ai-header {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      color: white; padding: 16px 18px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .ai-header-info { display: flex; align-items: center; gap: 12px; }
+    .ai-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brand-gradient);
+      color: #fff; display: flex; align-items: center;
+      justify-content: center; font-size: 1.1rem;
+    }
+    .ai-header-info strong { display: block; font-size: 0.9rem; }
+    .ai-status { font-size: 0.72rem; color: #a8b6c9; display: flex; align-items: center; gap: 5px; }
+    .ai-dot {
+      width: 7px; height: 7px; background: #25D366; border-radius: 50%;
+      box-shadow: 0 0 8px #25D366;
+    }
+    .ai-close {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(255,255,255,0.1); color: white;
+      font-size: 0.9rem; cursor: pointer; transition: var(--transition);
+      border: none; display: flex; align-items: center; justify-content: center;
+    }
+    .ai-close:hover { background: rgba(255,255,255,0.2); }
+
+    .ai-messages {
+      flex: 1; overflow-y: auto; padding: 18px;
+      background: #f8fafc; display: flex; flex-direction: column; gap: 14px;
+    }
+    .ai-messages::-webkit-scrollbar { width: 6px; }
+    .ai-messages::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+
+    .ai-msg { display: flex; flex-direction: column; max-width: 85%; }
+    .ai-msg-bot { align-self: flex-start; }
+    .ai-msg-user { align-self: flex-end; align-items: flex-end; }
+
+    .ai-msg-bubble {
+      padding: 12px 16px; border-radius: 16px;
+      font-size: 0.87rem; line-height: 1.5;
+    }
+    .ai-msg-bot .ai-msg-bubble {
+      background: white; color: var(--text-dark);
+      border: 1px solid var(--grey-border);
+      border-bottom-left-radius: 4px;
+    }
+    .ai-msg-user .ai-msg-bubble {
+      background: var(--navy); color: white;
+      border-bottom-right-radius: 4px;
+    }
+    .ai-msg-bubble a { color: var(--brand-pink); font-weight: 600; }
+    .ai-msg-user .ai-msg-bubble a { color: var(--brand-pink-light); }
+
+    .ai-quick-replies {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;
+    }
+    .ai-quick-replies button {
+      background: white; border: 1px solid var(--grey-border);
+      color: var(--navy); font-size: 0.75rem; font-weight: 500;
+      padding: 7px 12px; border-radius: 20px; cursor: pointer;
+      transition: var(--transition); font-family: inherit;
+    }
+    .ai-quick-replies button:hover {
+      border-color: var(--brand-pink); background: var(--brand-pink-bg);
+      color: var(--brand-pink);
+    }
+
+    .ai-typing {
+      display: flex; gap: 4px; padding: 12px 16px;
+      background: white; border: 1px solid var(--grey-border);
+      border-radius: 16px; border-bottom-left-radius: 4px;
+      width: fit-content;
+    }
+    .ai-typing span {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #cbd5e1; animation: aiBounce 1.2s infinite;
+    }
+    .ai-typing span:nth-child(2) { animation-delay: 0.15s; }
+    .ai-typing span:nth-child(3) { animation-delay: 0.3s; }
+    @keyframes aiBounce {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+      30% { transform: translateY(-6px); opacity: 1; }
+    }
+
+    .ai-input-wrap {
+      display: flex; gap: 8px; padding: 12px 14px;
+      background: white; border-top: 1px solid var(--grey-border);
+    }
+    .ai-input-wrap input {
+      flex: 1; border: 1px solid var(--grey-border);
+      border-radius: 24px; padding: 10px 16px;
+      font: inherit; font-size: 0.85rem; outline: none;
+      transition: var(--transition);
+    }
+    .ai-input-wrap input:focus { border-color: var(--brand-pink); }
+    .ai-input-wrap button {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brand-gradient);
+      color: #fff; font-size: 0.9rem;
+      cursor: pointer; border: none; transition: var(--transition);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ai-input-wrap button:hover { transform: scale(1.05); }
+
+    .ai-footer-note {
+      text-align: center; font-size: 0.68rem;
+      color: #94a3b8; padding: 0 0 10px; background: white;
+    }
+
+    @media (max-width: 640px) {
+      .ai-toggle { width: 52px; height: 52px; bottom: 18px; left: 18px; font-size: 1.3rem; }
+      .ai-panel {
+        bottom: 80px; left: 12px; right: 12px;
+        width: auto; height: 500px; max-height: calc(100vh - 100px);
+      }
+    }
+
+    /* ================= PROFESSIONAL REFINEMENT LAYER ================= */
+    :root {
+      --radius: 10px; --radius-sm: 8px;
+      --shadow-sm: 0 1px 2px rgba(10,22,40,.05);
+      --shadow-md: 0 8px 24px -8px rgba(10,22,40,.14);
+      --shadow-lg: 0 20px 40px -12px rgba(10,22,40,.18);
+      --transition: color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { text-rendering: optimizeLegibility; }
+    h1, h2, h3 { text-wrap: balance; }
+    h2 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: clamp(1.7rem, 2.6vw, 2.2rem); color: var(--navy); margin-bottom: 10px; }
+    p { text-wrap: pretty; }
+    section { padding: 88px 0; }
+
+    /* Buttons: squared, confident, no glow */
+    .btn-primary, .btn-primary-hero, .btn-outline, .btn-outline-hero, .btn-whatsapp { border-radius: 6px; }
+    .btn-primary, .btn-primary-hero { background: var(--brand-gradient); color: #fff; box-shadow: 0 6px 16px -4px rgba(233,30,99,.40); }
+    .btn-primary:hover, .btn-primary-hero:hover { background: var(--brand-gradient); transform: translateY(-2px); box-shadow: 0 12px 28px -6px rgba(233,30,99,.50); }
+    .btn-outline:hover { background: var(--brand-pink-bg); }
+    .btn-small { border-radius: 6px; }
+
+    /* Header: slimmer, calmer */
+    .header { box-shadow: none; background: rgba(255,255,255,.97); }
+    .nav-bar { height: 76px; }
+    .logo img { height: 52px; }
+    .nav-links > a, .dropdown > a { border-radius: 6px; }
+    .dropdown-menu { border-radius: 10px; }
+
+    /* Hero */
+    .hero { padding: 96px 0 104px; }
+    .hero::before { display: none; }
+    .hero-label { position: relative; background: none; border: 0; border-radius: 0; padding: 2px 0 2px 16px; letter-spacing: .12em; font-size: .75rem; margin-bottom: 26px; }
+    .hero-label::before { content: ''; display: block; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; height: auto; border-radius: 2px; background: var(--brand-gradient-v); box-shadow: none; }
+    .hero h1 { font-size: clamp(2.3rem, 4.6vw, 3.7rem); line-height: 1.1; }
+    .hero h1 .highlight { font-style: normal; color: transparent; font-weight: 600; }
+    .hero p { color: #b6c3d4; font-weight: 400; line-height: 1.7; }
+    .hero-image-wrap { border-radius: 12px; }
+    .hero-image-wrap img { height: 480px; }
+    .hero-badge { border-radius: 8px; background: rgba(10,22,40,.9); }
+    .hero-badge-icon { border-radius: 8px; background: var(--brand-gradient); }
+
+    /* Labels: sentence case, quiet */
+    .section-label, .product-category { text-transform: none; letter-spacing: .01em; font-size: .85rem; }
+
+    /* Cards: one calm treatment, no lift-on-hover everywhere */
+    .category-card, .product-card, .feature-item, .brand-card, .industry-card, .stat-item { border-radius: var(--radius); box-shadow: none; }
+    .category-card:hover, .product-card:hover { transform: translateY(-4px); box-shadow: var(--brand-glow); }
+    .category-card:hover .category-img img { transform: scale(1.03); }
+    .category-meta span { border-radius: 4px; }
+    .product-code { border-radius: 4px; }
+    .feature-icon { border-radius: 10px; }
+    .cta-band { border-radius: 12px; border-left: 4px solid transparent; background: linear-gradient(var(--navy), var(--navy)) padding-box, var(--brand-gradient-v) border-box; }
+
+    /* Search */
+    .search-bar { border-radius: 10px; box-shadow: var(--shadow-sm); }
+    .filter-select { border-radius: 6px; }
+
+    /* Modals */
+    .modal { border-radius: 14px; }
+    .modal-head { border-radius: 14px 14px 0 0; }
+
+    /* Footer */
+    .footer { margin-top: 0; padding-top: 72px; }
+    .footer h4 { letter-spacing: 0; }
+
+    /* Accessibility floor */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--accent); outline-offset: 2px;
+    }
+    .hero a:focus-visible, .footer a:focus-visible { outline-color: var(--brand-blue-light); }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 64px 0; }
+      .nav-bar { height: 68px; }
+      .logo img { height: 44px; }
+      .hero { padding: 64px 0 72px; }
+      .hero-image-wrap img { height: 320px; }
+    }
+    /* ================= BRAND LAYER (DDA pink + blue) ================= */
+    /* Active/hover underline for main nav links */
+    .nav-links > a::after {
+      content: ''; position: absolute; left: 14px; right: 14px; bottom: 4px;
+      height: 2px; border-radius: 2px; background: var(--brand-pink);
+      transform: scaleX(0); transform-origin: left; transition: transform .25s ease;
+    }
+    .nav-links > a:hover::after, .nav-links > a.active::after { transform: scaleX(1); }
+    @media (max-width: 1200px) {
+      .nav-links > a::after { left: 10px; right: 10px; }
+    }
+
+    /* Inline style="color:var(--accent)" labels in the HTML -> brand pink (no HTML edit needed) */
+    [style*="color:var(--accent)"], [style*="color: var(--accent)"] { color: var(--brand-pink) !important; }
+
   </style>
+
 </head>
 <body>
 
@@ -631,6 +933,8 @@
             <a href="#" onclick="openProductDetail('picosecond'); return false;">PICOSECOND LASER</a>
             <a href="#" onclick="openProductDetail('ipl-shr'); return false;">IPL SHR</a>
             <a href="#" onclick="openProductDetail('machines'); return false;">Machines</a>
+			<a href="#" onclick="openProductDetail('renoxome-protocol'); return false;">RenoXome_Protocol</a>
+            <a href="#" onclick="openProductDetail('renoxome-plus-ppt'); return false;">RenoXome+_PPT</a>
             <a href="#" onclick="openProductDetail('meso'); return false;">Meso</a>
             <a href="#" onclick="openProductDetail('n-cell'); return false;">N-Cell</a>
           </div>
@@ -666,6 +970,8 @@
       <a href="#" class="sub" onclick="openProductDetail('machines'); toggleMobileMenu(); return false;">Machines</a>
       <a href="#" class="sub" onclick="openProductDetail('meso'); toggleMobileMenu(); return false;">Meso</a>
       <a href="#" class="sub" onclick="openProductDetail('n-cell'); toggleMobileMenu(); return false;">N-Cell</a>
+	  <a href="#" class="sub" onclick="openProductDetail('renoxome-protocol'); toggleMobileMenu(); return false;">RenoXome_Protocol</a>
+      <a href="#" class="sub" onclick="openProductDetail('renoxome-plus-ppt'); toggleMobileMenu(); return false;">RenoXome+_PPT</a>
       <a href="#" onclick="showPage('carrier'); toggleMobileMenu(); return false;">Carrier</a>
       <a href="#" onclick="showPage('contact'); toggleMobileMenu(); return false;">Contact</a>
       <a href="#" onclick="showPage('gallery'); toggleMobileMenu(); return false;">Photo Gallery</a>
@@ -1090,7 +1396,6 @@
       </div>
     </div>
   </div>
-
   <script>
     /* ============ PRODUCT DATABASE ============ */
     const productsDB = {
@@ -1101,284 +1406,195 @@
         brand: 'BDS Aesthetic',
         availability: 'In Stock',
         short: '755nm Alexandrite platform for fast, effective hair removal and pigmentation treatments.',
-        desc: 'The Alexandrite Laser is a premium 755nm platform designed for high-speed hair removal, vascular lesions, and pigmentation. Featuring advanced cooling and a large spot size, it delivers comfortable and efficient treatments for all skin types.',
+        desc: 'The Alexandrite Laser is a premium 755nm platform designed for high-speed hair removal, vascular lesions, and pigmentation.',
         images: [
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581092335876-4b5a2c6c4b4b?w=800&auto=format&fit=crop'
         ],
-        specs: {
-          'Wavelength': '755 nm',
-          'Spot Size': '6 – 20 mm',
-          'Pulse Duration': '2 – 20 ms',
-          'Energy': 'Up to 100 J/cm²',
-          'Cooling': 'Contact + Cryo',
-          'Power': '220V / 50-60Hz'
-        },
+        specs: { 'Wavelength': '755 nm', 'Spot Size': '6 – 20 mm', 'Pulse Duration': '2 – 20 ms', 'Energy': 'Up to 100 J/cm²', 'Cooling': 'Contact + Cryo', 'Power': '220V / 50-60Hz' },
         features: ['Fast hair removal', 'Pigmentation treatment', 'Vascular lesions', 'All skin types', 'Advanced cooling system', 'Large touchscreen display'],
         applications: ['Laser hair removal', 'Skin rejuvenation', 'Pigmentation correction', 'Vascular treatment']
       },
       'asp-laser': {
-        name: 'ASP LASER',
-        code: 'BDS-ASP-002',
-        category: 'Laser Systems',
-        brand: 'BDS Aesthetic',
-        availability: 'In Stock',
+        name: 'ASP LASER', code: 'BDS-ASP-002', category: 'Laser Systems', brand: 'BDS Aesthetic', availability: 'In Stock',
         short: 'Advanced Skin Platform laser for multiple aesthetic indications.',
-        desc: 'The ASP Laser is a versatile multi-application platform that combines multiple wavelengths for comprehensive skin treatments including hair removal, skin tightening, and pigmentation.',
+        desc: 'The ASP Laser is a versatile multi-application platform that combines multiple wavelengths.',
         images: [
-          'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop',
+          'https://i.ibb.co/qM6P5tQQ/asp-laser.png',
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop'
         ],
-        specs: {
-          'Type': 'Multi-wavelength platform',
-          'Wavelengths': '755 / 808 / 1064 nm',
-          'Spot Size': '8 – 18 mm',
-          'Energy': 'Up to 120 J/cm²',
-          'Display': '15" Touchscreen',
-          'Power': '220V / 50-60Hz'
-        },
+        specs: { 'Type': 'Multi-wavelength platform', 'Wavelengths': '755 / 808 / 1064 nm', 'Spot Size': '8 – 18 mm', 'Energy': 'Up to 120 J/cm²', 'Display': '15" Touchscreen', 'Power': '220V / 50-60Hz' },
         features: ['Multi-wavelength capability', 'Fast treatment mode', 'Advanced safety sensors', 'Ergonomic handpiece', 'User-friendly interface'],
         applications: ['Hair removal', 'Skin tightening', 'Pigmentation', 'Vascular lesions']
       },
       'b-tox': {
-        name: 'B-TOX',
-        code: 'BDS-BTX-003',
-        category: 'Skincare & Mesotherapy',
-        brand: 'DermaPro',
-        availability: 'In Stock',
+        name: 'B-TOX', code: 'BDS-BTX-003', category: 'Skincare & Mesotherapy', brand: 'DermaPro', availability: 'In Stock',
         short: 'Professional-grade botulinum toxin solution for aesthetic clinics.',
-        desc: 'B-TOX is a premium botulinum toxin product for aesthetic indications, supplied exclusively to licensed clinics and medical professionals in the UAE and GCC.',
+        desc: 'B-TOX is a premium botulinum toxin product for aesthetic indications.',
         images: [
-          'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop',
+          'https://i.ibb.co/C5QgVt6t/B-TOX.png',
           'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581092335876-4b5a2c6c4b4b?w=800&auto=format&fit=crop'
         ],
-        specs: {
-          'Type': 'Botulinum Toxin Type A',
-          'Presentation': '100 U vial',
-          'Storage': '2 – 8 °C',
-          'Shelf Life': '24 months',
-          'Licensing': 'Medical professionals only'
-        },
+        specs: { 'Type': 'Botulinum Toxin Type A', 'Presentation': '100 U vial', 'Storage': '2 – 8 °C', 'Shelf Life': '24 months', 'Licensing': 'Medical professionals only' },
         features: ['High purity formula', 'Consistent results', 'Long-lasting effect', 'Cold-chain delivery'],
         applications: ['Facial rejuvenation', 'Wrinkle reduction', 'Medical aesthetics']
       },
       'cosmuderm': {
-        name: 'Cosmuderm',
-        code: 'BDS-CSD-004',
-        category: 'Skincare & Mesotherapy',
-        brand: 'DermaPro',
-        availability: 'In Stock',
+        name: 'Cosmuderm', code: 'BDS-CSD-004', category: 'Skincare & Mesotherapy', brand: 'DermaPro', availability: 'In Stock',
         short: 'Advanced dermal filler and skin booster range.',
-        desc: 'Cosmuderm is a comprehensive range of dermal fillers and skin boosters designed for professional aesthetic use. The range includes products for hydration, volume restoration, and skin quality improvement.',
+        desc: 'Cosmuderm is a comprehensive range of dermal fillers and skin boosters.',
         images: [
-          'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop',
+          'https://i.ibb.co/KxR4VPVb/COSMUDERM.png',
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&auto=format&fit=crop'
         ],
-        specs: {
-          'Type': 'Dermal filler / Skin booster',
-          'Composition': 'Hyaluronic Acid',
-          'Volume': '1 ml / 2 ml syringes',
-          'Concentration': '20 mg/ml',
-          'Storage': 'Room temperature'
-        },
+        specs: { 'Type': 'Dermal filler / Skin booster', 'Composition': 'Hyaluronic Acid', 'Volume': '1 ml / 2 ml syringes', 'Concentration': '20 mg/ml', 'Storage': 'Room temperature' },
         features: ['High viscosity HA', 'Long-lasting results', 'Natural finish', 'Sterile packaging'],
         applications: ['Facial volumizing', 'Skin hydration', 'Wrinkle correction']
       },
       'dermashine': {
-        name: 'DERMASHINE',
-        code: 'BDS-DSH-005',
-        category: 'Skincare & Mesotherapy',
-        brand: 'DermaPro',
-        availability: 'In Stock',
+        name: 'DERMASHINE', code: 'BDS-DSH-005', category: 'Skincare & Mesotherapy', brand: 'DermaPro', availability: 'In Stock',
         short: 'Professional mesotherapy and skin rejuvenation solution.',
-        desc: 'DERMASHINE is a professional mesotherapy product line for skin rejuvenation, hydration, and brightening. It is formulated with vitamins, minerals, and hyaluronic acid for optimal skin results.',
+        desc: 'DERMASHINE is a professional mesotherapy product line for skin rejuvenation.',
         images: [
-          'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop',
+          'https://i.ibb.co/YBHWCJ1n/DERMASHINE.png',
           'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop'
         ],
-        specs: {
-          'Type': 'Mesotherapy solution',
-          'Volume': '5 ml vial',
-          'Composition': 'HA + Vitamins + Minerals',
-          'Usage': 'Professional only',
-          'Storage': '2 – 8 °C'
-        },
+        specs: { 'Type': 'Mesotherapy solution', 'Volume': '5 ml vial', 'Composition': 'HA + Vitamins + Minerals', 'Usage': 'Professional only', 'Storage': '2 – 8 °C' },
         features: ['Deep hydration', 'Skin brightening', 'Anti-aging benefits', 'Quick absorption'],
         applications: ['Mesotherapy', 'Skin boosters', 'Face & neck rejuvenation']
       },
       'hifu-manual': {
-        name: 'HIFU Manual',
-        code: 'BDS-HFM-006',
-        category: 'HIFU Systems',
-        brand: 'AesthetiQ',
-        availability: 'On Request',
+        name: 'HIFU Manual', code: 'BDS-HFM-006', category: 'HIFU Systems', brand: 'AesthetiQ', availability: 'On Request',
         short: 'Manual HIFU system for precise skin lifting and tightening.',
-        desc: 'The HIFU Manual system offers precise control for non-invasive skin lifting and tightening. It is ideal for smaller clinics and professionals who prefer a hands-on approach.',
+        desc: 'The HIFU Manual system offers precise control for non-invasive skin lifting.',
         images: [
-          'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&auto=format&fit=crop',
+          'https://i.ibb.co/zhc6PKh3/hifu-manual.png',
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581092335876-4b5a2c6c4b4b?w=800&auto=format&fit=crop'
         ],
-        specs: {
-          'Type': 'HIFU',
-          'Cartridges': '1.5 / 3.0 / 4.5 mm',
-          'Energy': '0.1 – 2.0 J',
-          'Display': 'LCD',
-          'Power': '220V'
-        },
+        specs: { 'Type': 'HIFU', 'Cartridges': '1.5 / 3.0 / 4.5 mm', 'Energy': '0.1 – 2.0 J', 'Display': 'LCD', 'Power': '220V' },
         features: ['Precise depth control', 'Non-invasive', 'No downtime', 'Compact design'],
         applications: ['Skin lifting', 'Wrinkle reduction', 'Body contouring']
       },
       'hifu-ultherapy': {
-        name: 'HIFU ULTHERAPY',
-        code: 'BDS-HFU-007',
-        category: 'HIFU Systems',
-        brand: 'AesthetiQ',
-        availability: 'In Stock',
+        name: 'HIFU ULTHERAPY', code: 'BDS-HFU-007', category: 'HIFU Systems', brand: 'AesthetiQ', availability: 'In Stock',
         short: 'Advanced HIFU Ultherapy platform for deep skin lifting.',
-        desc: 'HIFU ULTHERAPY is a premium non-invasive skin lifting platform that uses microfocused ultrasound to stimulate collagen production deep within the skin. It is FDA-cleared for brow lift, neck lift, and décolletage treatment.',
+        desc: 'HIFU ULTHERAPY is a premium non-invasive skin lifting platform.',
         images: [
           'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop'
         ],
-        specs: {
-          'Type': 'Microfocused Ultrasound',
-          'Depth': '1.5 / 3.0 / 4.5 mm',
-          'Energy': 'Up to 1.2 J',
-          'Display': '15" Touchscreen',
-          'Power': '220V / 50-60Hz'
-        },
+        specs: { 'Type': 'Microfocused Ultrasound', 'Depth': '1.5 / 3.0 / 4.5 mm', 'Energy': 'Up to 1.2 J', 'Display': '15" Touchscreen', 'Power': '220V / 50-60Hz' },
         features: ['FDA-cleared', 'Deep collagen stimulation', 'No downtime', 'Visible lifting results'],
         applications: ['Brow lift', 'Neck lift', 'Décolletage', 'Jawline definition']
       },
       'picosecond': {
-        name: 'PICOSECOND LASER',
-        code: 'BDS-PIC-008',
-        category: 'Laser Systems',
-        brand: 'BDS Aesthetic',
-        availability: 'In Stock',
+        name: 'PICOSECOND LASER', code: 'BDS-PIC-008', category: 'Laser Systems', brand: 'BDS Aesthetic', availability: 'In Stock',
         short: 'Picosecond laser for tattoo removal and pigmentation.',
-        desc: 'The PICOSECOND LASER delivers ultra-short pulses to break down pigment and tattoo ink with minimal discomfort. It is highly effective for tattoo removal, pigmentation, and skin rejuvenation.',
+        desc: 'The PICOSECOND LASER delivers ultra-short pulses to break down pigment.',
         images: [
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop'
         ],
-        specs: {
-          'Wavelengths': '532 / 755 / 1064 nm',
-          'Pulse Duration': 'Picosecond',
-          'Spot Size': '2 – 10 mm',
-          'Energy': 'Up to 2.0 J',
-          'Display': '15" Touchscreen'
-        },
+        specs: { 'Wavelengths': '532 / 755 / 1064 nm', 'Pulse Duration': 'Picosecond', 'Spot Size': '2 – 10 mm', 'Energy': 'Up to 2.0 J', 'Display': '15" Touchscreen' },
         features: ['Ultra-fast pulses', 'Minimal discomfort', 'Effective on all ink colors', 'Safe for all skin types'],
         applications: ['Tattoo removal', 'Pigmentation', 'Skin rejuvenation', 'Melasma']
       },
       'ipl-shr': {
-        name: 'IPL SHR',
-        code: 'BDS-IPL-009',
-        category: 'Laser Systems',
-        brand: 'BDS Aesthetic',
-        availability: 'In Stock',
+        name: 'IPL SHR', code: 'BDS-IPL-009', category: 'Laser Systems', brand: 'BDS Aesthetic', availability: 'In Stock',
         short: 'IPL SHR platform for fast, comfortable hair removal.',
-        desc: 'The IPL SHR (Super Hair Removal) platform uses optimized pulse technology for fast, comfortable, and effective hair removal. It is suitable for all skin types and offers a large spot size for quick treatments.',
+        desc: 'The IPL SHR platform uses optimized pulse technology for fast hair removal.',
         images: [
           'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop'
         ],
-        specs: {
-          'Type': 'IPL SHR',
-          'Wavelength': '640 – 1200 nm',
-          'Spot Size': '10 – 50 mm',
-          'Energy': 'Up to 50 J/cm²',
-          'Display': '10" Touchscreen'
-        },
+        specs: { 'Type': 'IPL SHR', 'Wavelength': '640 – 1200 nm', 'Spot Size': '10 – 50 mm', 'Energy': 'Up to 50 J/cm²', 'Display': '10" Touchscreen' },
         features: ['Fast treatment mode', 'Comfortable pulses', 'All skin types', 'Large spot size'],
         applications: ['Hair removal', 'Skin rejuvenation', 'Vascular lesions', 'Pigmentation']
       },
       'machines': {
-        name: 'Machines',
-        code: 'BDS-MCH-010',
-        category: 'Machines & Devices',
-        brand: 'BDS Aesthetic',
-        availability: 'On Request',
+        name: 'Machines', code: 'BDS-MCH-010', category: 'Machines & Devices', brand: 'BDS Aesthetic', availability: 'On Request',
         short: 'Multi-platform aesthetic workstations for clinics.',
-        desc: 'Our multi-platform aesthetic machines combine multiple technologies in one workstation, including laser, IPL, RF, and HIFU. Ideal for clinics looking to offer a full range of treatments.',
+        desc: 'Our multi-platform aesthetic machines combine multiple technologies in one workstation.',
         images: [
-          'https://images.unsplash.com/photo-1581092335876-4b5a2c6c4b4b?w=800&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&auto=format&fit=crop'
+          'https://i.ibb.co/LdT1PZPv/machine.png',
+          'https://i.ibb.co/LdT1PZPv/machine.png',
+          'https://i.ibb.co/LdT1PZPv/machine.png'
         ],
-        specs: {
-          'Type': 'Multi-platform workstation',
-          'Technologies': 'Laser, IPL, RF, HIFU',
-          'Display': '15" Touchscreen',
-          'Power': '220V / 50-60Hz',
-          'Cooling': 'Built-in'
-        },
+        specs: { 'Type': 'Multi-platform workstation', 'Technologies': 'Laser, IPL, RF, HIFU', 'Display': '15" Touchscreen', 'Power': '220V / 50-60Hz', 'Cooling': 'Built-in' },
         features: ['Multiple technologies', 'Compact design', 'User-friendly', 'Cost-effective'],
         applications: ['Full-service clinics', 'Aesthetic centers', 'Medical spas']
       },
       'meso': {
-        name: 'Meso',
-        code: 'BDS-MES-011',
-        category: 'Skincare & Mesotherapy',
-        brand: 'DermaPro',
-        availability: 'In Stock',
+        name: 'Meso', code: 'BDS-MES-011', category: 'Skincare & Mesotherapy', brand: 'DermaPro', availability: 'In Stock',
         short: 'Mesotherapy solutions for skin rejuvenation and hydration.',
-        desc: 'Meso is a range of mesotherapy solutions designed for professional skin rejuvenation, hydration, and brightening. Each formula is enriched with active ingredients for optimal results.',
+        desc: 'Meso is a range of mesotherapy solutions designed for professional skin rejuvenation.',
         images: [
-          'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop',
+          'https://i.ibb.co/NGT3Dcw/MESO-ASPICOM.png',
           'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop'
         ],
-        specs: {
-          'Type': 'Mesotherapy solution',
-          'Volume': '5 ml / 10 ml vials',
-          'Composition': 'HA + Actives',
-          'Usage': 'Professional only',
-          'Storage': '2 – 8 °C'
-        },
+        specs: { 'Type': 'Mesotherapy solution', 'Volume': '5 ml / 10 ml vials', 'Composition': 'HA + Actives', 'Usage': 'Professional only', 'Storage': '2 – 8 °C' },
         features: ['Deep hydration', 'Skin brightening', 'Anti-aging', 'Customizable protocols'],
         applications: ['Mesotherapy', 'Skin boosters', 'Face & body']
       },
       'n-cell': {
-        name: 'N-Cell',
-        code: 'BDS-NCL-012',
-        category: 'Skincare & Mesotherapy',
-        brand: 'DermaPro',
-        availability: 'In Stock',
+        name: 'N-Cell', code: 'BDS-NCL-012', category: 'Skincare & Mesotherapy', brand: 'DermaPro', availability: 'In Stock',
         short: 'Advanced cell therapy skincare for professional use.',
-        desc: 'N-Cell is an advanced skincare range formulated with growth factors and peptides for skin regeneration and anti-aging. It is designed for professional aesthetic treatments.',
+        desc: 'N-Cell is an advanced skincare range formulated with growth factors and peptides.',
         images: [
           'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop'
         ],
-        specs: {
-          'Type': 'Cell therapy skincare',
-          'Volume': '5 ml vial',
-          'Composition': 'Growth factors + Peptides',
-          'Usage': 'Professional only',
-          'Storage': '2 – 8 °C'
-        },
+        specs: { 'Type': 'Cell therapy skincare', 'Volume': '5 ml vial', 'Composition': 'Growth factors + Peptides', 'Usage': 'Professional only', 'Storage': '2 – 8 °C' },
         features: ['Cell regeneration', 'Anti-aging', 'Skin repair', 'Professional grade'],
         applications: ['Skin regeneration', 'Anti-aging', 'Post-treatment care']
+      },
+      'renoxome-protocol': {
+        name: 'RenoXome_Protocol', code: 'BDS-RXP-013', category: 'Skincare & Mesotherapy', brand: 'DermaPro', availability: 'In Stock',
+        short: 'Advanced regenerative protocol for skin renewal and repair.',
+        desc: 'RenoXome_Protocol is a premium regenerative skincare protocol combining growth factors, peptides, and hyaluronic acid.',
+        images: [
+          'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop'
+        ],
+        specs: { 'Type': 'Regenerative protocol', 'Volume': '5 ml vial', 'Composition': 'Growth factors + Peptides + HA', 'Usage': 'Professional only', 'Storage': '2 – 8 °C', 'Shelf Life': '24 months' },
+        features: ['Cellular regeneration', 'Deep skin repair', 'Anti-aging benefits', 'Post-treatment recovery', 'Professional-grade formula', 'Sterile packaging'],
+        applications: ['Skin regeneration', 'Anti-aging programs', 'Post-laser recovery', 'Mesotherapy protocols', 'Face & neck rejuvenation']
+      },
+      'renoxome-plus-ppt': {
+        name: 'RenoXome+_PPT', code: 'BDS-RXP-014', category: 'Skincare & Mesotherapy', brand: 'DermaPro', availability: 'In Stock',
+        short: 'Enhanced regenerative complex with platelet-poor plasma technology.',
+        desc: 'RenoXome+_PPT is an advanced regenerative skincare solution combining growth factors with PPT technology.',
+        images: [
+          'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1581092335876-4b5a2c6c4b4b?w=800&auto=format&fit=crop'
+        ],
+        specs: { 'Type': 'Regenerative complex + PPT', 'Volume': '5 ml / 10 ml vials', 'Composition': 'Growth factors + PPT + HA', 'Usage': 'Professional only', 'Storage': '2 – 8 °C', 'Shelf Life': '24 months' },
+        features: ['Platelet-poor plasma technology', 'Advanced cellular renewal', 'Superior hydration', 'Improves skin elasticity', 'Hair restoration support', 'Professional use only'],
+        applications: ['Skin rejuvenation', 'Hair restoration', 'Wound healing', 'Anti-aging treatments', 'Mesotherapy']
       }
     };
 
     /* ============ RENDER PRODUCT GRID ============ */
     function renderProducts() {
       const grid = document.getElementById('productGrid');
+      if (!grid) return;
       let html = '';
       Object.keys(productsDB).forEach(key => {
         const p = productsDB[key];
@@ -1429,19 +1645,14 @@
       document.getElementById('modalTitle').textContent = p.name;
       document.getElementById('productModalBody').innerHTML = `
         <div class="product-detail-grid">
-          <!-- GALLERY -->
           <div class="gallery">
             <div class="gallery-main">
               <img id="galleryMainImg" src="${p.images[0]}" alt="${p.name}">
               <button class="gallery-nav prev" onclick="prevGalleryImage()"><i class="fas fa-chevron-left"></i></button>
               <button class="gallery-nav next" onclick="nextGalleryImage()"><i class="fas fa-chevron-right"></i></button>
             </div>
-            <div class="gallery-thumbs" id="galleryThumbs">
-              ${thumbsHtml}
-            </div>
+            <div class="gallery-thumbs" id="galleryThumbs">${thumbsHtml}</div>
           </div>
-
-          <!-- INFO -->
           <div class="product-detail-info">
             <div class="detail-meta">
               <span class="detail-badge gold">${p.category}</span>
@@ -1451,18 +1662,12 @@
             <h2>${p.name}</h2>
             <div style="font-size:0.8rem; color:#94a3b8; margin-bottom:18px;">Product Code: ${p.code}</div>
             <p class="desc">${p.desc}</p>
-
-            <div class="detail-specs">
-              ${specsHtml}
-            </div>
-
+            <div class="detail-specs">${specsHtml}</div>
             <div class="detail-actions">
               <button class="btn-primary" onclick="closeProductModal(); openQuoteModal('${p.name}', '${p.code}')">Request a Quote</button>
               <a href="https://wa.me/971501234567?text=${encodeURIComponent('Hello, I am interested in ' + p.name + ' (' + p.code + '). Please provide more information and quotation.')}" target="_blank" rel="noopener" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Enquiry</a>
               <a href="#" class="btn-outline" onclick="return false;"><i class="fas fa-download"></i> Download Brochure</a>
             </div>
-
-            <!-- TABS -->
             <div class="detail-tabs">
               <div class="tab-buttons">
                 <button class="tab-btn active" onclick="switchTab(this, 'tab-overview')">Overview</button>
@@ -1470,23 +1675,13 @@
                 <button class="tab-btn" onclick="switchTab(this, 'tab-specs')">Specifications</button>
                 <button class="tab-btn" onclick="switchTab(this, 'tab-apps')">Applications</button>
               </div>
-              <div id="tab-overview" class="tab-content active">
-                <p>${p.desc}</p>
-              </div>
-              <div id="tab-features" class="tab-content">
-                <ul>${featuresHtml}</ul>
-              </div>
-              <div id="tab-specs" class="tab-content">
-                <ul>${Object.entries(p.specs).map(([k,v]) => `<li><strong>${k}:</strong> ${v}</li>`).join('')}</ul>
-              </div>
-              <div id="tab-apps" class="tab-content">
-                <ul>${applicationsHtml}</ul>
-              </div>
+              <div id="tab-overview" class="tab-content active"><p>${p.desc}</p></div>
+              <div id="tab-features" class="tab-content"><ul>${featuresHtml}</ul></div>
+              <div id="tab-specs" class="tab-content"><ul>${Object.entries(p.specs).map(([k,v]) => `<li><strong>${k}:</strong> ${v}</li>`).join('')}</ul></div>
+              <div id="tab-apps" class="tab-content"><ul>${applicationsHtml}</ul></div>
             </div>
           </div>
         </div>
-
-        <!-- RELATED PRODUCTS -->
         <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--grey-border);">
           <h3 style="margin-bottom: 20px; color: var(--navy);">Related Products</h3>
           <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px;">
@@ -1556,21 +1751,21 @@
     document.getElementById('quoteForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const data = new FormData(this);
-      const msg = `Hello BDS Aesthetic, I would like a quotation.%0A%0AName: ${encodeURIComponent(data.get('name'))}%0ACompany: ${encodeURIComponent(data.get('company') || 'Not provided')}%0AEmail: ${encodeURIComponent(data.get('email'))}%0APhone: ${encodeURIComponent(data.get('phone') || 'Not provided')}%0AProduct: ${encodeURIComponent(data.get('product'))}%0ARequirement: ${encodeURIComponent(data.get('message') || '')}`;
+      const msg = `Hello DDS Aesthetic, I would like a quotation.%0A%0AName: ${encodeURIComponent(data.get('name'))}%0ACompany: ${encodeURIComponent(data.get('company') || 'Not provided')}%0AEmail: ${encodeURIComponent(data.get('email'))}%0APhone: ${encodeURIComponent(data.get('phone') || 'Not provided')}%0AProduct: ${encodeURIComponent(data.get('product'))}%0ARequirement: ${encodeURIComponent(data.get('message') || '')}`;
       window.open(`https://wa.me/971501234567?text=${msg}`, '_blank', 'noopener');
       closeQuoteModal();
       this.reset();
-      alert('Thank you! Your enquiry has been prepared. WhatsApp will open to send your message.');
+      alert('Thank you! Your enquiry has been prepared.');
     });
 
     /* ============ CONTACT FORM ============ */
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const data = new FormData(this);
-      const msg = `Hello BDS Aesthetic, I have a contact enquiry.%0A%0AName: ${encodeURIComponent(data.get('name'))}%0ACompany: ${encodeURIComponent(data.get('company') || 'Not provided')}%0AEmail: ${encodeURIComponent(data.get('email'))}%0APhone: ${encodeURIComponent(data.get('phone') || 'Not provided')}%0ASubject: ${encodeURIComponent(data.get('subject') || 'General')}%0AMessage: ${encodeURIComponent(data.get('message'))}`;
+      const msg = `Hello DDS Aesthetic, I have a contact enquiry.%0A%0AName: ${encodeURIComponent(data.get('name'))}%0ACompany: ${encodeURIComponent(data.get('company') || 'Not provided')}%0AEmail: ${encodeURIComponent(data.get('email'))}%0APhone: ${encodeURIComponent(data.get('phone') || 'Not provided')}%0ASubject: ${encodeURIComponent(data.get('subject') || 'General')}%0AMessage: ${encodeURIComponent(data.get('message'))}`;
       window.open(`https://wa.me/971501234567?text=${msg}`, '_blank', 'noopener');
       this.reset();
-      alert('Thank you! Your message has been prepared. WhatsApp will open to send it.');
+      alert('Thank you! Your message has been prepared.');
     });
 
     /* ============ PAGE NAVIGATION ============ */
@@ -1580,7 +1775,6 @@
       if (page) page.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      // Update active nav
       document.querySelectorAll('.nav-links > a').forEach(a => a.classList.remove('active'));
       const navMap = { home: 0, about: 1, carrier: 3, contact: 4, gallery: 5 };
       const navLinks = document.querySelectorAll('.nav-links > a');
@@ -1640,13 +1834,167 @@
       }
     });
 
-    /* ============ CLICK OUTSIDE MODAL ============ */
     document.getElementById('productModal').addEventListener('click', e => {
       if (e.target === e.currentTarget) closeProductModal();
     });
     document.getElementById('quoteModal').addEventListener('click', e => {
       if (e.target === e.currentTarget) closeQuoteModal();
     });
+
+    /* ============ AI ASSISTANT — REAL AI BACKEND ============ */
+    (function() {
+      const aiToggle = document.getElementById('aiToggle');
+      const aiPanel = document.getElementById('aiPanel');
+      const aiClose = document.getElementById('aiClose');
+      const aiInput = document.getElementById('aiInput');
+      const aiSend = document.getElementById('aiSend');
+      const aiMessages = document.getElementById('aiMessages');
+      const AI_ENDPOINT = window.DDS_AI_ENDPOINT || '/api/chat';
+      let conversation = [];
+      let busy = false;
+
+      if (!aiToggle || !aiPanel || !aiInput || !aiSend || !aiMessages) return;
+
+      aiToggle.addEventListener('click', () => {
+        aiPanel.classList.toggle('open');
+        if (aiPanel.classList.contains('open')) setTimeout(() => aiInput.focus(), 250);
+      });
+      aiClose.addEventListener('click', () => aiPanel.classList.remove('open'));
+      aiInput.addEventListener('keydown', e => {
+        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendAIMessage(); }
+      });
+      aiSend.addEventListener('click', sendAIMessage);
+
+      window.aiQuickReply = function(text) { sendAIMessage(text); };
+
+      async function sendAIMessage(text) {
+        const msg = (text || aiInput.value || '').trim();
+        if (!msg || busy) return;
+        busy = true;
+        aiSend.disabled = true;
+        aiInput.value = '';
+        addUserMessage(msg);
+        showTyping();
+
+        try {
+          const productContext = Object.entries(productsDB || {}).map(([key, p]) => ({
+            key, name:p.name, code:p.code, category:p.category, brand:p.brand,
+            availability:p.availability, short:p.short, desc:p.desc,
+            specs:p.specs, features:p.features, applications:p.applications
+          }));
+
+          const response = await fetch(AI_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              message: msg,
+              history: conversation.slice(-10),
+              products: productContext
+            })
+          });
+
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(data.error || `AI service returned ${response.status}`);
+
+          const answer = data.answer || data.output || 'I could not generate a response right now.';
+          conversation.push({ role:'user', content:msg }, { role:'assistant', content:answer });
+          conversation = conversation.slice(-10);
+          hideTyping();
+          addBotMessage(formatAIAnswer(answer));
+        } catch (err) {
+          console.error('DDS AI error:', err);
+          hideTyping();
+          addBotMessage(`I’m temporarily unable to connect to the AI service. Please try again, or <a href="#" onclick="aiOpenQuote(); return false;">request a quote</a> directly.<br><br><small style="opacity:.75">If you are the website administrator, check that <strong>/api/chat</strong> is deployed and your AI API key is configured on the server.</small>`);
+        } finally {
+          busy = false;
+          aiSend.disabled = false;
+          aiInput.focus();
+        }
+      }
+
+      function addUserMessage(text) {
+        const div = document.createElement('div');
+        div.className = 'ai-msg ai-msg-user';
+        div.innerHTML = `<div class="ai-msg-bubble">${escapeHTML(text)}</div>`;
+        aiMessages.appendChild(div); scrollAIBottom();
+      }
+      function addBotMessage(html) {
+        const div = document.createElement('div');
+        div.className = 'ai-msg ai-msg-bot';
+        div.innerHTML = `<div class="ai-msg-bubble">${html}</div>`;
+        aiMessages.appendChild(div); scrollAIBottom();
+      }
+      function showTyping() {
+        const div = document.createElement('div');
+        div.className = 'ai-msg ai-msg-bot'; div.id = 'aiTypingIndicator';
+        div.innerHTML = `<div class="ai-typing"><span></span><span></span><span></span></div>`;
+        aiMessages.appendChild(div); scrollAIBottom();
+      }
+      function hideTyping() { const el=document.getElementById('aiTypingIndicator'); if(el) el.remove(); }
+      function scrollAIBottom() { aiMessages.scrollTop = aiMessages.scrollHeight; }
+      function escapeHTML(str) { return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+      function formatAIAnswer(text) {
+        // Basic safe markdown rendering for AI output; raw HTML from the model is escaped.
+        let out = escapeHTML(text);
+        out = out.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        out = out.replace(/`([^`]+)`/g, '<code>$1</code>');
+        out = out.replace(/\n/g, '<br>');
+        return out;
+      }
+
+      window.aiProductLink = function(key) {
+        aiPanel.classList.remove('open');
+        setTimeout(() => openProductDetail(key), 150);
+      };
+      window.aiOpenQuote = function(product) {
+        aiPanel.classList.remove('open');
+        setTimeout(() => {
+          openQuoteModal();
+          if (product) {
+            const el = document.getElementById('quoteProduct');
+            if (el) el.value = product;
+          }
+        }, 150);
+      };
+    })();
   </script>
+  <!-- ============ AI ASSISTANT ============ -->
+<button class="ai-toggle" id="aiToggle" aria-label="Open AI Assistant">
+  <i class="fas fa-robot"></i>
+  <span class="ai-toggle-badge">AI</span>
+</button>
+
+<div class="ai-panel" id="aiPanel">
+  <div class="ai-header">
+    <div class="ai-header-info">
+      <div class="ai-avatar"><i class="fas fa-robot"></i></div>
+      <div>
+        <strong>DDS AI Assistant</strong>
+        <span class="ai-status"><span class="ai-dot"></span> Online</span>
+      </div>
+    </div>
+    <button class="ai-close" id="aiClose" aria-label="Close"><i class="fas fa-times"></i></button>
+  </div>
+
+  <div class="ai-messages" id="aiMessages">
+    <div class="ai-msg ai-msg-bot">
+      <div class="ai-msg-bubble">
+        Hello! 👋 I'm the DDS AI Assistant. I can help you find products, compare equipment, or answer questions about our aesthetic range. What are you looking for?
+      </div>
+      <div class="ai-quick-replies">
+        <button onclick="aiQuickReply('Show me laser products')">Laser products</button>
+        <button onclick="aiQuickReply('Recommend a HIFU machine')">HIFU machines</button>
+        <button onclick="aiQuickReply('What skincare do you have?')">Skincare</button>
+        <button onclick="aiQuickReply('How do I request a quote?')">Request quote</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-input-wrap">
+    <input type="text" id="aiInput" placeholder="Ask about products, prices, availability..." autocomplete="off">
+    <button id="aiSend" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+  </div>
+  <div class="ai-footer-note">Powered by BDS · For quotes, we hand off to WhatsApp</div>
+</div>
 </body>
 </html>
