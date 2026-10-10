@@ -901,7 +901,131 @@
 
     /* Inline style="color:var(--accent)" labels in the HTML -> brand pink (no HTML edit needed) */
     [style*="color:var(--accent)"], [style*="color: var(--accent)"] { color: var(--brand-pink) !important; }
+	
+	/* ================= CEO IMAGE (modern bordered frame) ================= */
+.ceo-image-wrap {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
 
+.ceo-image-frame {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  border-radius: 16px;
+  padding: 6px;
+  background: var(--brand-gradient);
+  box-shadow: 0 20px 45px -18px rgba(233, 30, 99, 0.45);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.ceo-image-frame::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 22px;
+  border: 1px solid rgba(233, 30, 99, 0.20);
+  pointer-events: none;
+}
+
+.ceo-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  background: #fff;
+}
+
+.ceo-image-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 55px -18px rgba(233, 30, 99, 0.55);
+}
+
+.ceo-image-caption {
+  padding-bottom: 8px;
+}
+
+.ceo-image-caption strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--navy);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.ceo-image-caption span {
+  font-size: 0.82rem;
+  color: var(--brand-pink);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .ceo-image-frame {
+    width: 200px;
+    height: 200px;
+  }
+  .ceo-image-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
+/* ================= CEO SIGNATURE ================= */
+.ceo-signature {
+  margin-top: 6px;
+  width: 147px;
+  height: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.ceo-signature img {
+  width: 147px;
+  height: 135px;
+  object-fit: contain;
+  display: block;
+  /* subtle brand glow so it feels part of the design */
+  filter: drop-shadow(0 4px 10px rgba(233, 30, 99, 0.15));
+  transition: var(--transition);
+}
+
+.ceo-signature:hover img {
+  filter: drop-shadow(0 6px 14px rgba(233, 30, 99, 0.28));
+  transform: translateY(-2px);
+}
+
+/* Optional thin line under signature for a formal look */
+.ceo-signature::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 147px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--brand-pink), var(--brand-blue));
+  opacity: 0.35;
+}
+
+@media (max-width: 640px) {
+  .ceo-signature,
+  .ceo-signature img {
+    width: 120px;
+    height: 110px;
+  }
+  .ceo-signature::after {
+    width: 120px;
+  }
+}
   </style>
 
 </head>
@@ -1178,28 +1302,133 @@
     </section>
   </main>
 
+  
   <!-- ============ ABOUT PAGE ============ -->
-  <main id="page-about" class="page-view">
-    <section>
-      <div class="container">
-        <div class="section-header">
-          <div><div class="section-label">About Us</div><h2>DDS Aesthetic LLC</h2></div>
-        </div>
-        <p style="max-width: 800px; color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
-          DDS Aesthetic LLC is a UAE-based distributor of premium aesthetic, laser, and skincare equipment.
-          We partner with leading global manufacturers to bring advanced technology to clinics, aesthetic centers,
-          and beauty professionals across the GCC. Our mission is to supply reliable products backed by
-          professional support, training, and after-sales service.
-        </p>
-        <div class="stats-grid" style="margin-top: 48px;">
-          <div class="stat-item"><div class="stat-number">10+</div><div class="stat-label">Years Experience</div></div>
-          <div class="stat-item"><div class="stat-number">100+</div><div class="stat-label">Products</div></div>
-          <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">Brands</div></div>
-          <div class="stat-item"><div class="stat-number">500+</div><div class="stat-label">Customers</div></div>
-        </div>
+<main id="page-about" class="page-view">
+
+  <!-- Intro -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <div><div class="section-label">About Us</div><h2>ASPICOM</h2></div>
       </div>
-    </section>
-  </main>
+      <p style="max-width: 800px; color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
+        Founded in 2018, ASPICOM has been growing steadily with an unwavering vision for beauty and health.
+        ASPICOM has maintained its leading position in the aesthetic and therapeutic market based on the superior
+        quality and trust of customers of the Botulinum toxin product (B-TOX)® which was launched in 2019.
+        In addition, ASPICOM's unique R&amp;D expertise includes products such as Hyaluronic Acid Filler® (CosmuDerm®)
+        in 2018.
+      </p>
+
+      <div class="stats-grid" style="margin-top: 48px;">
+        <div class="stat-item"><div class="stat-number">2018</div><div class="stat-label">Founded</div></div>
+        <div class="stat-item"><div class="stat-number">2019</div><div class="stat-label">B-TOX® Launched</div></div>
+        <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">Brands</div></div>
+        <div class="stat-item"><div class="stat-number">500+</div><div class="stat-label">Customers</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CEO Message -->
+<section style="background: var(--grey-bg);">
+  <div class="container">
+    <div class="section-header">
+      <div><div class="section-label">Leadership</div><h2>CEO Message</h2></div>
+    </div>
+
+    <!-- CEO IMAGE (modern bordered frame) -->
+    <div class="ceo-image-wrap">
+      <div class="ceo-image-frame">
+        <img src="https://i.ibb.co/wrpGFLbz/ceo.jpg" alt="CEO of ASPICOM" width="960" height="960" loading="lazy">
+      </div>
+      <div class="ceo-image-caption">
+        <strong>Chief Executive Officer</strong>
+        <span>ASPICOM</span>
+      </div>
+    </div>
+
+    <div style="max-width: 860px; margin-top: 40px;">
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.9; margin-bottom: 18px;">
+        ASPICOM is now undertaking a new leap forward as a global biotechnology company, surpassing UAE leading
+        companies. We will continue to lead the way for the UAE to become a biotechnology powerhouse by fostering
+        core technologies through trust management and continuous R&amp;D investment, and by strengthening
+        partnerships with global pharmaceutical companies.
+      </p>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.9; margin-bottom: 18px;">
+        We are also investing in the development of new high-value-added products through investment in excellent
+        GMP facilities, professional talent cultivation, and innovative research and development.
+      </p>
+      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.9;">
+        ASPICOM will always be by your side. I ask for your continued interest and encouragement as we develop
+        into a global biopharmaceutical company that creates new value through continuous management innovation.
+      </p>
+      <p style="margin-top: 28px; font-weight: 600; color: var(--navy);">Thank You</p>
+	  <!-- CEO Signature -->
+      <div class="ceo-signature">
+        <img src="https://i.ibb.co/ZRRz0DGc/sign.png" alt="CEO Signature" width="147" height="135" loading="lazy">
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <div><div class="section-label">Our Purpose</div><h2>Mission &amp; Vision</h2></div>
+      </div>
+      <div class="features-grid" style="grid-template-columns: 1fr 1fr;">
+
+        <div class="feature-item" style="text-align: left; padding: 32px;">
+          <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
+          <h4>Mission</h4>
+          <p style="line-height: 1.8;">
+            To continuously provide trustworthy, cutting-edge resources dedicated to the development of specialized,
+            custom medications that set the standard for quality and innovation in our industry. Our world-class
+            professionals will always remain adaptable to changing market conditions while providing and supporting
+            an interactive network that encourages knowledgeable collaboration among healthcare professionals and
+            consumers.
+          </p>
+          <p style="line-height: 1.8; margin-top: 12px;">
+            Our team will aggressively integrate any new business opportunities that might help our business partners
+            and medical practitioners grow their practices and enhance patient care and the quality of life in our
+            communities.
+          </p>
+        </div>
+
+        <div class="feature-item" style="text-align: left; padding: 32px;">
+          <div class="feature-icon"><i class="fas fa-eye"></i></div>
+          <h4>Vision</h4>
+          <p style="line-height: 1.8;">
+            ASPICOM's vision is <em>"To be the world's most valued company to patients, customers, colleagues,
+            investors, business partners, and the communities where we work and live."</em>
+          </p>
+          <p style="line-height: 1.8; margin-top: 12px;">
+            ASPICOM's vision is <em>"To lead the way to a healthier world."</em> By carrying out this vision at every
+            level of our organization, we will be recognized by our employees, customers, and shareholders as the
+            best pharmaceutical company in the world, resulting in value for all.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding-top: 0;">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <div class="section-label" style="color:#5eead4;">Partner With Us</div>
+          <h2 style="color:#fff;">Let's build something together.</h2>
+          <p>Reach out to our team for product information, partnerships, or distribution enquiries.</p>
+        </div>
+        <button class="btn-primary" onclick="openQuoteModal()" style="white-space:nowrap;">Contact Us <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+</main>
 
   <!-- ============ CONTACT PAGE ============ -->
   <main id="page-contact" class="page-view">
