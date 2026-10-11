@@ -1026,7 +1026,754 @@
     width: 120px;
   }
 }
-  </style>
+/* ================= PHOTO GALLERY ================= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 14px;
+  padding: 4px;
+  background: var(--brand-gradient);
+  box-shadow: 0 12px 30px -14px rgba(233, 30, 99, 0.35);
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition);
+  aspect-ratio: 1 / 1;
+}
+
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 18px;
+  border: 1px solid rgba(233, 30, 99, 0.18);
+  pointer-events: none;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px -14px rgba(233, 30, 99, 0.55);
+}
+
+.gallery-item:hover::before {
+  opacity: 1;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ================= GALLERY LIGHTBOX ================= */
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 8, 23, 0.92);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  padding: 40px 20px;
+}
+
+.gallery-lightbox.open {
+  display: flex;
+}
+
+.gallery-lightbox img {
+  max-width: 92vw;
+  max-height: 88vh;
+  border-radius: 12px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  object-fit: contain;
+  animation: lbFade 0.25s ease;
+}
+
+@keyframes lbFade {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.gallery-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-lightbox-close:hover {
+  background: var(--brand-gradient);
+  transform: rotate(90deg);
+}
+
+.gallery-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-lightbox-nav:hover {
+  background: var(--brand-gradient);
+}
+
+.gallery-lightbox-nav.prev { left: 24px; }
+.gallery-lightbox-nav.next { right: 24px; }
+
+@media (max-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px;
+  }
+  .gallery-lightbox-nav.prev { left: 8px; }
+  .gallery-lightbox-nav.next { right: 8px; }
+  .gallery-lightbox-nav { width: 42px; height: 42px; }
+  .gallery-lightbox-close { top: 12px; right: 12px; width: 40px; height: 40px; }
+}
+/* ================= HERO ROTATING GALLERY ================= */
+.hero-gallery-section {
+  padding: 72px 0 40px;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.hero-gallery {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--navy);
+  box-shadow: 0 30px 70px -20px rgba(10, 22, 40, 0.35);
+  border: 2px solid transparent;
+  background-image:
+    linear-gradient(var(--navy), var(--navy)),
+    var(--brand-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  pointer-events: none;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 22, 40, 0.0) 40%,
+    rgba(10, 22, 40, 0.85) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-slide-info {
+  position: absolute;
+  bottom: 36px;
+  left: 36px;
+  right: 36px;
+  z-index: 2;
+  color: #fff;
+}
+
+.hero-slide-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-pink-light);
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: rgba(233, 30, 99, 0.15);
+  border: 1px solid rgba(233, 30, 99, 0.3);
+  margin-bottom: 10px;
+}
+
+.hero-slide-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.hero-slide-info p {
+  font-size: 0.92rem;
+  color: #c8d2e0;
+  max-width: 620px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.hero-slide-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand-gradient);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.hero-slide-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -8px rgba(233, 30, 99, 0.5);
+}
+
+.hero-gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  z-index: 3;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-gallery-nav:hover {
+  background: var(--brand-gradient);
+  border-color: transparent;
+}
+
+.hero-gallery-nav.prev { left: 20px; }
+.hero-gallery-nav.next { right: 20px; }
+
+.hero-gallery-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.hero-gallery-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: var(--transition);
+}
+
+.hero-gallery-dots button.active {
+  width: 28px;
+  border-radius: 4px;
+  background: var(--brand-gradient);
+}
+
+@media (max-width: 768px) {
+  .hero-gallery { height: 380px; border-radius: 14px; }
+  .hero-slide-info { bottom: 24px; left: 22px; right: 22px; }
+  .hero-slide-info h3 { font-size: 1.2rem; }
+  .hero-slide-info p { font-size: 0.82rem; }
+  .hero-gallery-nav { width: 38px; height: 38px; font-size: 0.85rem; }
+  .hero-gallery-nav.prev { left: 10px; }
+  .hero-gallery-nav.next { right: 10px; }
+}
+/* ================= SMALL SCROLL HINT ================= */
+.scroll-hint {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+  opacity: 0.7;
+}
+
+.scroll-hint-arrow {
+  width: 22px;
+  height: 22px;
+  border-right: 2px solid var(--brand-pink);
+  border-bottom: 2px solid var(--brand-blue);
+  transform: rotate(45deg);
+  animation: scrollHint 1.6s ease-in-out infinite;
+  border-radius: 1px;
+}
+
+@keyframes scrollHint {
+  0%, 100% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: rotate(45deg) translate(4px, 4px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .scroll-hint { margin-top: 16px; }
+  .scroll-hint-arrow { width: 18px; height: 18px; }
+  }
+  /* ================= HERO ROTATING GALLERY ================= */
+.hero-gallery-section {
+  padding: 72px 0 40px;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.hero-gallery {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--navy);
+  box-shadow: 0 30px 70px -20px rgba(10, 22, 40, 0.35);
+  border: 2px solid transparent;
+  background-image:
+    linear-gradient(var(--navy), var(--navy)),
+    var(--brand-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  pointer-events: none;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,22,40,0) 40%, rgba(10,22,40,0.85) 100%);
+  pointer-events: none;
+}
+
+.hero-slide-info {
+  position: absolute;
+  bottom: 36px;
+  left: 36px;
+  right: 36px;
+  z-index: 2;
+  color: #fff;
+}
+
+.hero-slide-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-pink-light);
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: rgba(233, 30, 99, 0.15);
+  border: 1px solid rgba(233, 30, 99, 0.3);
+  margin-bottom: 10px;
+}
+
+.hero-slide-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.hero-slide-info p {
+  font-size: 0.92rem;
+  color: #c8d2e0;
+  max-width: 620px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.hero-slide-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand-gradient);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.hero-slide-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -8px rgba(233, 30, 99, 0.5);
+}
+
+.hero-gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  z-index: 3;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-gallery-nav:hover {
+  background: var(--brand-gradient);
+  border-color: transparent;
+}
+
+.hero-gallery-nav.prev { left: 20px; }
+.hero-gallery-nav.next { right: 20px; }
+
+.hero-gallery-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.hero-gallery-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: var(--transition);
+}
+
+.hero-gallery-dots button.active {
+  width: 28px;
+  border-radius: 4px;
+  background: var(--brand-gradient);
+}
+
+/* ================= SMALL SCROLL HINT ================= */
+.scroll-hint {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+  opacity: 0.7;
+}
+
+.scroll-hint-arrow {
+  width: 22px;
+  height: 22px;
+  border-right: 2px solid var(--brand-pink);
+  border-bottom: 2px solid var(--brand-blue);
+  transform: rotate(45deg);
+  animation: scrollHint 1.6s ease-in-out infinite;
+  border-radius: 1px;
+}
+
+@keyframes scrollHint {
+  0%, 100% { transform: rotate(45deg) translate(0, 0); opacity: 0.4; }
+  50%      { transform: rotate(45deg) translate(4px, 4px); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .hero-gallery { height: 380px; border-radius: 14px; }
+  .hero-slide-info { bottom: 24px; left: 22px; right: 22px; }
+  .hero-slide-info h3 { font-size: 1.2rem; }
+  .hero-slide-info p { font-size: 0.82rem; }
+  .hero-gallery-nav { width: 38px; height: 38px; font-size: 0.85rem; }
+  .hero-gallery-nav.prev { left: 10px; }
+  .hero-gallery-nav.next { right: 10px; }
+  .scroll-hint { margin-top: 16px; }
+  .scroll-hint-arrow { width: 18px; height: 18px; }
+}
+  
+  
+/* ================= AUTO-SCROLLING PRODUCT STRIP ================= */
+.strip-section {
+  padding: 48px 0 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+.strip-header { text-align: center; margin-bottom: 28px; }
+.strip-header h2 { margin-bottom: 4px; }
+.strip-wrap {
+  width: 100%; overflow: hidden;
+  padding: 22px 0;
+  background: #f8fafc;
+  position: relative;
+  margin: 0 0 8px;
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.strip-track {
+  display: flex; gap: 20px; width: fit-content;
+  padding: 0 40px;
+  animation: stripScroll 45s linear infinite;
+  will-change: transform;
+}
+.strip-track:hover { animation-play-state: paused; }
+.strip-item {
+  position: relative; flex-shrink: 0;
+  width: 240px; height: 170px;
+  border-radius: 12px; padding: 3px;
+  background: var(--brand-gradient);
+  overflow: hidden; cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 8px 22px -12px rgba(233, 30, 99, 0.35);
+}
+.strip-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  border-radius: 9px; display: block;
+  transition: transform 0.4s ease;
+}
+.strip-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px -12px rgba(233, 30, 99, 0.55);
+}
+.strip-item:hover img { transform: scale(1.06); }
+.strip-item-label {
+  position: absolute; left: 8px; right: 8px; bottom: 8px;
+  background: rgba(10, 22, 40, 0.82);
+  backdrop-filter: blur(8px);
+  color: #fff; font-size: 0.72rem; font-weight: 600;
+  padding: 5px 10px; border-radius: 6px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  opacity: 0; transform: translateY(6px);
+  transition: var(--transition);
+}
+.strip-item:hover .strip-item-label { opacity: 1; transform: translateY(0); }
+@keyframes stripScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@media (max-width: 640px) {
+  .strip-item { width: 180px; height: 130px; }
+  .strip-track { gap: 14px; animation-duration: 35s; }
+  .strip-wrap { padding: 14px 0; }
+}
+
+/* ================= PROMO HERO (Why Choose Us) ================= */
+.promo-hero-section {
+  padding: 88px 0;
+}
+
+.promo-hero {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #0a1628;
+  box-shadow: 0 30px 70px -20px rgba(10, 22, 40, 0.35);
+  border: 2px solid transparent;
+  background-image:
+    linear-gradient(#0a1628, #0a1628),
+    linear-gradient(135deg, #E91E63 0%, #00B8D4 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.promo-hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 1;
+}
+
+.promo-hero-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.promo-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(10,22,40,0.92) 0%, rgba(10,22,40,0.75) 55%, rgba(10,22,40,0.45) 100%);
+  z-index: 3;
+}
+
+.promo-hero-content {
+  position: relative;
+  z-index: 4;
+  max-width: 780px;
+  padding: 60px 56px;
+  color: #fff;
+}
+
+.promo-hero-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 4px;
+  background: rgba(233, 30, 99, 0.18);
+  border: 1px solid rgba(233, 30, 99, 0.4);
+  color: #F06292;
+  margin-bottom: 22px;
+}
+
+.promo-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.9rem, 3.4vw, 2.9rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.promo-hero-highlight {
+  background: linear-gradient(90deg, #F06292 0%, #4FC3F7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
+
+.promo-hero-desc {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #c8d2e0;
+  max-width: 640px;
+  margin-bottom: 26px;
+  font-weight: 400;
+}
+
+.promo-hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.promo-hero-badge {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #e4eefc;
+  padding: 6px 14px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(6px);
+}
+
+.promo-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.promo-hero-actions .btn-primary,
+.promo-hero-actions .btn-whatsapp {
+  padding: 14px 28px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .promo-hero-section { padding: 56px 0; }
+  .promo-hero { min-height: 420px; border-radius: 14px; }
+  .promo-hero-content { padding: 40px 28px; }
+  .promo-hero-title { font-size: 1.6rem; }
+  .promo-hero-desc { font-size: 0.92rem; }
+  .promo-hero-badges { gap: 8px; }
+  .promo-hero-badge { font-size: 0.72rem; padding: 5px 11px; }
+}
+</style>
 
 </head>
 <body>
@@ -1172,7 +1919,7 @@
             </div>
           </div>
           <div class="category-card" onclick="openProductDetail('cosmuderm')">
-            <div class="category-img"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&auto=format&fit=crop" alt="Skincare Products" loading="lazy"></div>
+            <div class="category-img"><img src="https://i.ibb.co/yFF1hpDk/Screenshot-2026-10-10-205206.png" alt="Skincare Products" loading="lazy"></div>
             <div class="category-info">
               <h4>Skincare & Mesotherapy</h4>
               <p>Professional serums, boosters & meso solutions.</p>
@@ -1180,7 +1927,7 @@
             </div>
           </div>
           <div class="category-card" onclick="openProductDetail('machines')">
-            <div class="category-img"><img src="https://images.unsplash.com/photo-1581092335876-4b5a2c6c4b4b?w=400&auto=format&fit=crop" alt="Machines" loading="lazy"></div>
+            <div class="category-img"><img src="https://i.ibb.co/4ZD6D56m/Screenshot-2026-10-11-065545.png" alt="Machines" loading="lazy"></div>
             <div class="category-info">
               <h4>Machines & Devices</h4>
               <p>Multi-platform aesthetic workstations.</p>
@@ -1263,27 +2010,54 @@
       </div>
     </section>
 
-    <!-- WHY CHOOSE US -->
-    <section>
+        <!-- WHY CHOOSE US / MONTHLY PROMO -->
+    <section class="promo-hero-section">
       <div class="container">
-        <div class="section-header">
+
+        <!-- PROMO HERO GALLERY -->
+        <div class="promo-hero" id="promoHero">
+          <div class="promo-hero-slide active" style="background-image: url('https://i.ibb.co/0pZ3bLvP/for-banner-1.png');"></div>
+          <div class="promo-hero-slide" style="background-image: url('https://i.ibb.co/9kDLDYxW/for-banner-2.png');"></div>
+          <div class="promo-hero-slide" style="background-image: url('https://i.ibb.co/SwDn8LWh/for-banner-3.png');"></div>
+          <div class="promo-hero-overlay"></div>
+
+          <div class="promo-hero-content">
+            <div class="promo-hero-tag">October 2026 · Exclusive Offer</div>
+            <h2 class="promo-hero-title">
+              Elevate Your Clinic<br>
+              with <span class="promo-hero-highlight">ASPICOM</span> Innovation
+            </h2>
+            <p class="promo-hero-desc">
+              Authorized distribution of premium aesthetic and regenerative solutions across the UAE &amp; GCC.
+              This month only  exclusive pricing on ASPICOM, B-TOX®, Cosmuderm®, and the RenoXome® regenerative range.
+            </p>
+            <div class="promo-hero-badges">
+              <span class="promo-hero-badge">? Authorized Distributor</span>
+              <span class="promo-hero-badge">? GCC-Wide Delivery</span>
+              <span class="promo-hero-badge">? Clinical Support</span>
+            </div>
+            <div class="promo-hero-actions">
+              <button class="btn-primary" onclick="openQuoteModal()">Request This Month's Offer <i class="fas fa-arrow-right"></i></button>
+              <a href="https://wa.me/971501234567?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20this%20month%27s%20promotion." target="_blank" rel="noopener" class="btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- FEATURES GRID (existing) -->
+        <div class="section-header" style="margin-top: 56px;">
           <div><div class="section-label">Why Choose Us</div><h2>Your Trusted Supply Partner</h2></div>
         </div>
         <div class="features-grid">
           <div class="feature-item"><div class="feature-icon"><i class="fas fa-check-circle"></i></div><h4>Quality Products</h4><p>Strict quality control and certified sourcing.</p></div>
           <div class="feature-item"><div class="feature-icon"><i class="fas fa-globe"></i></div><h4>Trusted Brands</h4><p>Authorized distributor for global leaders.</p></div>
-          <div class="feature-item"><div class="feature-icon"><i class="fas fa-headset"></i></div><h4>Professional Support</h4><p>Dedicated account managers & technical help.</p></div>
+          <div class="feature-item"><div class="feature-icon"><i class="fas fa-headset"></i></div><h4>Professional Support</h4><p>Dedicated account managers &amp; technical help.</p></div>
           <div class="feature-item"><div class="feature-icon"><i class="fas fa-truck-fast"></i></div><h4>Fast Response</h4><p>Quick quotes and efficient logistics.</p></div>
           <div class="feature-item"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><h4>Competitive Solutions</h4><p>Volume pricing and flexible terms.</p></div>
           <div class="feature-item"><div class="feature-icon"><i class="fas fa-map-pin"></i></div><h4>UAE-Based Support</h4><p>Local presence, regional expertise.</p></div>
         </div>
 
-        <div class="stats-grid">
-          <div class="stat-item"><div class="stat-number">10+</div><div class="stat-label">Years Experience</div></div>
-          <div class="stat-item"><div class="stat-number">100+</div><div class="stat-label">Products</div></div>
-          <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">Brands</div></div>
-          <div class="stat-item"><div class="stat-number">500+</div><div class="stat-label">Customers</div></div>
-        </div>
       </div>
     </section>
 
@@ -1502,24 +2276,82 @@
     </section>
   </main>
 
-  <!-- ============ PHOTO GALLERY PAGE ============ -->
-  <main id="page-gallery" class="page-view">
-    <section>
-      <div class="container">
-        <div class="section-header">
-          <div><div class="section-label">Our Work</div><h2>Photo Gallery</h2><p>A glimpse of our products and installations across the UAE.</p></div>
-        </div>
-        <div class="category-grid">
-          <div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500&auto=format&fit=crop" alt="Installation"></div></div>
-          <div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&auto=format&fit=crop" alt="Clinic setup"></div></div>
-          <div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500&auto=format&fit=crop" alt="Skincare products"></div></div>
-          <div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500&auto=format&fit=crop" alt="Laser equipment"></div></div>
-          <div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1581092335876-4b5a2c6c4b4b?w=500&auto=format&fit=crop" alt="Machine"></div></div>
-          <div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=500&auto=format&fit=crop" alt="Lab equipment"></div></div>
+<!-- ============ PHOTO GALLERY PAGE ============ -->
+<main id="page-gallery" class="page-view">
+
+  <!-- ============ AUTO-SCROLLING PRODUCT STRIP ============ -->
+  <section class="strip-section">
+    <div class="container">
+      <div class="strip-header">
+        <div class="section-label">Live Product Strip</div>
+        <h2>Browse Our Range</h2>
+      </div>
+    </div>
+    <div class="strip-wrap">
+      <div class="strip-track" id="stripTrack">
+        <!-- Images injected by JS from productsDB -->
+      </div>
+    </div>
+  </section>
+
+  <!-- EXISTING: OUR WORK GALLERY -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-label">Our Work</div>
+          <h2>Photo Gallery</h2>
+          <p>A glimpse of our products and installations across the UAE.</p>
         </div>
       </div>
-    </section>
-  </main>
+
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="https://i.ibb.co/YBhmhPqX/resized-0bdd190a-f4be-40de-896d-00f9c898f908.jpg" alt="Gallery image 1" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/7tWT25NW/resized-4bd04f87-05b7-4670-ab97-6bc2679acd5f.jpg" alt="Gallery image 2" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/fG4L01F2/resized-4c465c1e-81b9-486c-9375-ca9d71aaface.jpg" alt="Gallery image 3" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/21d6rc8F/resized-5b04addc-f30a-434d-91a6-8b37b6689edd.jpg" alt="Gallery image 4" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/7NzbqVLx/resized-6a5ab330-cfc1-4130-b88c-b6886a2f96dc.jpg" alt="Gallery image 5" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/LDf4YFwL/resized-7d3d58f6-d084-4b64-96f3-cff7a3e4d52c.jpg" alt="Gallery image 6" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/tTP9k3B5/resized-7ee4c728-8998-4e5e-a153-139402decd60.jpg" alt="Gallery image 7" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/XkSgCkDw/resized-8a9face0-1f43-42b5-a6a5-66d910e6e14d.jpg" alt="Gallery image 8" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/XfBhtkqv/resized-40b401fc-1c80-4cb0-9917-89601cbede3c.jpg" alt="Gallery image 9" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/M5yDKz2N/resized-40bfe786-003a-4a73-ba86-ef79342c4f9f.jpg" alt="Gallery image 10" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/RMYmtkz/resized-50ee5aee-9f88-4c1c-9510-6cd53ff0b325.jpg" alt="Gallery image 11" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/Z6RrjK6R/resized-57c38a89-4a27-4bdb-b88d-8ae1538f7f4c.jpg" alt="Gallery image 12" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/1YFmBvPL/resized-74d30902-1966-445b-bf55-5fd99a499dd3.jpg" alt="Gallery image 13" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/0p8769CM/resized-76c56018-5d54-4c45-9236-dd7543a50a61.jpg" alt="Gallery image 14" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/FLyMYCY0/resized-201f429a-344e-4c9e-b022-0548e4a442f4.jpg" alt="Gallery image 15" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/tp8cfzHQ/resized-402c3c01-fc82-4fc8-b225-df3b554014fc.jpg" alt="Gallery image 16" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/6Stwr04/resized-435e8b38-9caf-444e-9fd4-4ba9edc18991.jpg" alt="Gallery image 17" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/5x4TvBfw/resized-666f72fc-d63e-4134-9d85-2bf5da05a7c4.jpg" alt="Gallery image 18" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/DfK2RVHW/resized-797f0514-a306-4f0c-83b4-0126e67b4eca.jpg" alt="Gallery image 19" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/v7yyJyj/resized-3203dc3c-cf0e-4f27-8907-905159b95b38.jpg" alt="Gallery image 20" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/Fbd3XpRD/resized-4743da05-7556-4001-833f-6fe269fbb5ad.jpg" alt="Gallery image 21" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/MD1xBkfJ/resized-6245f657-ceeb-4e62-93f0-9239acca50be.jpg" alt="Gallery image 22" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/nqjzwmFQ/resized-6432a2bb-04cd-48da-bf97-00aba69b935c.jpg" alt="Gallery image 23" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/NRb8Gs1/resized-19097a0b-a86a-4377-9089-6003f6721f00.jpg" alt="Gallery image 24" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/fYBdj6x3/resized-53947239-0b42-4a2a-b67b-101a6e11e7a7.jpg" alt="Gallery image 25" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/84sWWHKP/resized-resized-0bdd190a-f4be-40de-896d-00f9c898f908.jpg" alt="Gallery image 26" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/kVRjt1KF/resized-resized-4bd04f87-05b7-4670-ab97-6bc2679acd5f.jpg" alt="Gallery image 27" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/PG483SF5/resized-resized-4c465c1e-81b9-486c-9375-ca9d71aaface.jpg" alt="Gallery image 28" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/4n1xMCwS/resized-resized-5b04addc-f30a-434d-91a6-8b37b6689edd.jpg" alt="Gallery image 29" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/tMgQXBWs/resized-resized-6a5ab330-cfc1-4130-b88c-b6886a2f96dc.jpg" alt="Gallery image 30" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/S7GjBtPj/resized-resized-7d3d58f6-d084-4b64-96f3-cff7a3e4d52c.jpg" alt="Gallery image 31" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/M5JFMXxD/resized-resized-8a9face0-1f43-42b5-a6a5-66d910e6e14d.jpg" alt="Gallery image 32" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/1t7rgcfZ/resized-resized-40b401fc-1c80-4cb0-9917-89601cbede3c.jpg" alt="Gallery image 33" loading="lazy"></div>
+        <div class="gallery-item"><img src="https://i.ibb.co/Q7xfLBqj/resized-resized-40bfe786-003a-4a73-ba86-ef79342c4f9f.jpg" alt="Gallery image 34" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="gallery-lightbox" id="galleryLightbox" onclick="closeGalleryLightbox(event)">
+    <button class="gallery-lightbox-close" onclick="closeGalleryLightbox(event)" aria-label="Close">&times;</button>
+    <button class="gallery-lightbox-nav prev" onclick="galleryNav(event, -1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+    <img id="galleryLightboxImg" src="" alt="Enlarged gallery image">
+    <button class="gallery-lightbox-nav next" onclick="galleryNav(event, 1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</main>
 
   <!-- ============ CARRIER PAGE ============ -->
   <main id="page-carrier" class="page-view">
@@ -1637,7 +2469,7 @@
         short: '755nm Alexandrite platform for fast, effective hair removal and pigmentation treatments.',
         desc: 'The Alexandrite Laser is a premium 755nm platform designed for high-speed hair removal, vascular lesions, and pigmentation.',
         images: [
-          'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
+          'https://i.ibb.co/1G91NQxb/ALEXENDRITE-LASER-1.png',
           'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581092335876-4b5a2c6c4b4b?w=800&auto=format&fit=crop'
@@ -1651,7 +2483,7 @@
         short: 'Advanced Skin Platform laser for multiple aesthetic indications.',
         desc: 'The ASP Laser is a versatile multi-application platform that combines multiple wavelengths.',
         images: [
-          'https://i.ibb.co/qM6P5tQQ/asp-laser.png',
+          'https://i.ibb.co/r2gHVzf0/asp-laser.jpg',
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop'
         ],
@@ -1719,7 +2551,7 @@
           'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop'
+          'https://i.ibb.co/JRBdYMjc/Screenshot-2026-10-10-205418.png'
         ],
         specs: { 'Type': 'Microfocused Ultrasound', 'Depth': '1.5 / 3.0 / 4.5 mm', 'Energy': 'Up to 1.2 J', 'Display': '15" Touchscreen', 'Power': '220V / 50-60Hz' },
         features: ['FDA-cleared', 'Deep collagen stimulation', 'No downtime', 'Visible lifting results'],
@@ -1769,7 +2601,7 @@
         short: 'Mesotherapy solutions for skin rejuvenation and hydration.',
         desc: 'Meso is a range of mesotherapy solutions designed for professional skin rejuvenation.',
         images: [
-          'https://i.ibb.co/NGT3Dcw/MESO-ASPICOM.png',
+          'https://i.ibb.co/W4rFDxWY/Screenshot-2026-10-11-065050-1.png',
           'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop'
         ],
@@ -1782,7 +2614,7 @@
         short: 'Advanced cell therapy skincare for professional use.',
         desc: 'N-Cell is an advanced skincare range formulated with growth factors and peptides.',
         images: [
-          'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop',
+          'https://i.ibb.co/JRBdYMjc/Screenshot-2026-10-10-205418.png',
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop'
         ],
@@ -1795,7 +2627,7 @@
         short: 'Advanced regenerative protocol for skin renewal and repair.',
         desc: 'RenoXome_Protocol is a premium regenerative skincare protocol combining growth factors, peptides, and hyaluronic acid.',
         images: [
-          'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop',
+          'https://i.ibb.co/v6cc6mhD/Out-Contour-Under-Eye-Meso-Therapy-Sol-Skin-Spa-1-1.jpg',
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop'
@@ -1809,7 +2641,7 @@
         short: 'Enhanced regenerative complex with platelet-poor plasma technology.',
         desc: 'RenoXome+_PPT is an advanced regenerative skincare solution combining growth factors with PPT technology.',
         images: [
-          'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop',
+          'https://i.ibb.co/p6GC9yZ3/Screenshot-2026-10-11-074124.png',
           'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581092335876-4b5a2c6c4b4b?w=800&auto=format&fit=crop'
@@ -1819,6 +2651,95 @@
         applications: ['Skin rejuvenation', 'Hair restoration', 'Wound healing', 'Anti-aging treatments', 'Mesotherapy']
       }
     };
+	
+	/* ============ HERO ROTATING GALLERY ============ */
+(function() {
+  const heroEl = document.getElementById('heroGallery');
+  const dotsEl = document.getElementById('heroGalleryDots');
+  if (!heroEl || !dotsEl || typeof productsDB === 'undefined') return;
+
+  // Build slides from productsDB (using first image of each product)
+  const slides = Object.entries(productsDB).map(([key, p]) => ({
+    key,
+    img: p.images[0],
+    tag: p.category,
+    title: p.name,
+    desc: p.short,
+    code: p.code
+  }));
+
+  let current = 0;
+  let timer = null;
+
+  // Inject slides
+  slides.forEach((s, i) => {
+    const slide = document.createElement('div');
+    slide.className = 'hero-slide' + (i === 0 ? ' active' : '');
+    slide.innerHTML = `
+      <img src="${s.img}" alt="${s.title}" loading="${i === 0 ? 'eager' : 'lazy'}">
+      <div class="hero-slide-info">
+        <span class="hero-slide-tag">${s.tag}</span>
+        <h3>${s.title}</h3>
+        <p>${s.desc}</p>
+        <button class="hero-slide-cta" onclick="openProductDetail('${s.key}')">
+          View Details <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    `;
+    heroEl.insertBefore(slide, dotsEl);
+  });
+
+  // Inject dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsEl.appendChild(dot);
+  });
+
+  const slideEls = heroEl.querySelectorAll('.hero-slide');
+  const dotEls = dotsEl.querySelectorAll('button');
+
+  function goToSlide(index) {
+    current = (index + slides.length) % slides.length;
+    slideEls.forEach((el, i) => el.classList.toggle('active', i === current));
+    dotEls.forEach((el, i) => el.classList.toggle('active', i === current));
+  }
+
+  window.heroGalleryNav = function(dir) {
+    goToSlide(current + dir);
+    restartAuto();
+  };
+
+  function startAuto() {
+    timer = setInterval(() => goToSlide(current + 1), 5000);
+  }
+  function stopAuto() {
+    if (timer) clearInterval(timer);
+  }
+  function restartAuto() {
+    stopAuto();
+    startAuto();
+  }
+
+  // Pause on hover
+  heroEl.addEventListener('mouseenter', stopAuto);
+  heroEl.addEventListener('mouseleave', startAuto);
+
+  // Touch swipe
+  let touchX = 0;
+  heroEl.addEventListener('touchstart', e => {
+    touchX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  heroEl.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].screenX - touchX;
+    if (Math.abs(dx) > 50) heroGalleryNav(dx < 0 ? 1 : -1);
+  }, { passive: true });
+
+  startAuto();
+})();
+
 
     /* ============ RENDER PRODUCT GRID ============ */
     function renderProducts() {
@@ -2186,7 +3107,106 @@
         }, 150);
       };
     })();
-  </script>
+	/* ============ PHOTO GALLERY LIGHTBOX ============ */
+(function() {
+  const items = Array.from(document.querySelectorAll('.gallery-item img'));
+  const lightbox = document.getElementById('galleryLightbox');
+  const lbImg = document.getElementById('galleryLightboxImg');
+  let currentIndex = 0;
+
+  if (!items.length || !lightbox) return;
+
+  items.forEach((img, i) => {
+    img.parentElement.addEventListener('click', () => openGalleryLightbox(i));
+  });
+
+  function openGalleryLightbox(index) {
+    currentIndex = index;
+    lbImg.src = items[index].src;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  window.closeGalleryLightbox = function(e) {
+    if (e) e.stopPropagation();
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  window.galleryNav = function(e, dir) {
+    e.stopPropagation();
+    currentIndex = (currentIndex + dir + items.length) % items.length;
+    lbImg.src = items[currentIndex].src;
+  };
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeGalleryLightbox();
+    if (e.key === 'ArrowLeft') galleryNav({ stopPropagation: () => {} }, -1);
+    if (e.key === 'ArrowRight') galleryNav({ stopPropagation: () => {} }, 1);
+  });
+
+  // Swipe on mobile
+  let touchStartX = 0;
+  lightbox.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  lightbox.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(dx) > 50) {
+      galleryNav({ stopPropagation: () => {} }, dx < 0 ? 1 : -1);
+    }
+  }, { passive: true });
+})();
+	
+  
+/* ============ AUTO-SCROLLING PRODUCT STRIP ============ */
+(function() {
+  const track = document.getElementById('stripTrack');
+  if (!track) return;
+
+  const images = [
+    'https://i.ibb.co/7Lb0zc7/Screenshot-2026-10-10-205050.png',
+    'https://i.ibb.co/yFF1hpDk/Screenshot-2026-10-10-205206.png',
+    'https://i.ibb.co/yBqx0ZmR/Screenshot-2026-10-10-205305.png',
+    'https://i.ibb.co/JRBdYMjc/Screenshot-2026-10-10-205418.png',
+    'https://i.ibb.co/xS0YbnW4/Screenshot-2026-10-10-205509.png',
+    'https://i.ibb.co/xtF6scsw/Screenshot-2026-10-10-205621.png',
+    'https://i.ibb.co/mVf1pBtv/Screenshot-2026-10-11-064521.png',
+    'https://i.ibb.co/W4rFDxWY/Screenshot-2026-10-11-065050-1.png',
+    'https://i.ibb.co/4ZD6D56m/Screenshot-2026-10-11-065545.png'
+  ];
+
+  // Duplicate the list so the loop is seamless (translate -50% needs 2x)
+  const doubled = images.concat(images);
+
+  track.innerHTML = doubled.map((src, i) =>
+    '<div class="strip-item">' +
+      '<img src="' + src + '" alt="Gallery image ' + (i + 1) + '" loading="lazy">' +
+    '</div>'
+  ).join('');
+})();
+
+/* ============ PROMO HERO ROTATION ============ */
+(function() {
+  const hero = document.getElementById('promoHero');
+  if (!hero) return;
+
+  const slides = hero.querySelectorAll('.promo-hero-slide');
+  if (!slides.length) return;
+
+  let current = 0;
+  const interval = 1000; // 1 second per image
+
+  function nextSlide() {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }
+
+  setInterval(nextSlide, interval);
+})();</script>
   <!-- ============ AI ASSISTANT ============ -->
 <button class="ai-toggle" id="aiToggle" aria-label="Open AI Assistant">
   <i class="fas fa-robot"></i>
