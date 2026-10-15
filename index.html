@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DDS Aesthetic LLC | Premium Aesthetic Equipment Distributor UAE</title>
-  <meta name="description" content="DDS Aesthetic LLC – Authorized distributor of premium aesthetic, laser, and skincare equipment across UAE & GCC. Alexandrite Laser, HIFU, PicoSecond, IPL SHR, and more.">
+  <meta name="description" content="DDS Aesthetic LLC Ã¢â‚¬â€œ Authorized distributor of premium aesthetic, laser, and skincare equipment across UAE & GCC. Alexandrite Laser, HIFU, PicoSecond, IPL SHR, and more.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -14,40 +14,44 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --navy: #0a1628;
-      --navy-light: #16294a;
-      /* Brand palette (from DDA logo) -- change colors here only */
-      --brand-pink: #E91E63;
-      --brand-pink-light: #F06292;
-      --brand-blue: #00B8D4;
-      --brand-blue-light: #4FC3F7;
-      --brand-gradient: linear-gradient(135deg, var(--brand-pink) 0%, var(--brand-blue) 100%);
-      --brand-gradient-soft: linear-gradient(135deg, var(--brand-pink-light) 0%, var(--brand-blue-light) 100%);
-      --brand-gradient-h: linear-gradient(90deg, var(--brand-pink) 0%, var(--brand-blue) 100%);
-      --brand-gradient-h-soft: linear-gradient(90deg, var(--brand-pink-light) 0%, var(--brand-blue-light) 100%);
-      --brand-gradient-v: linear-gradient(180deg, var(--brand-pink) 0%, var(--brand-blue) 100%);
-      --brand-pink-bg: #FDE8F0;
-      --brand-blue-bg: #E0F7FA;
-      --brand-card-fill: linear-gradient(#ffffff, #ffffff);
-      --brand-glow: -4px 12px 30px -10px rgba(233,30,99,0.28), 4px 12px 30px -10px rgba(0,184,212,0.28);
-      --accent: var(--brand-blue);
-      --accent-light: var(--brand-blue-light);
-      --grey-bg: #f8fafc;
-      --grey-border: #e9edf2;
-      --text-dark: #0f172a;
-      --text-muted: #475569;
-      --white: #ffffff;
+      --navy: #5D4037;                    /* deep dark brown (replaces navy) */
+      --navy-light: #4A2C1D;
+
+      /* Brand palette -> brown / gold tones */
+      --brand-pink: #8B5A2B;              /* dark brown (primary) */
+      --brand-pink-light: #B87A3D;        /* warm brown */
+      --brand-blue: #C9A227;              /* gold (accent) */
+      --brand-blue-light: #E0BC4A;        /* light gold */
+
+      --brand-gradient: linear-gradient(135deg, #8B5A2B 0%, #C9A227 100%);
+      --brand-gradient-soft: linear-gradient(135deg, #B87A3D 0%, #E0BC4A 100%);
+      --brand-gradient-h: linear-gradient(90deg, #8B5A2B 0%, #C9A227 100%);
+      --brand-gradient-h-soft: linear-gradient(90deg, #B87A3D 0%, #E0BC4A 100%);
+      --brand-gradient-v: linear-gradient(180deg, #8B5A2B 0%, #C9A227 100%);
+      --brand-pink-bg: #F5EBDF;           /* light brown tint */
+      --brand-blue-bg: #FBF4E6;
+      --brand-card-fill: linear-gradient(#FFF9F0, #FFF9F0);
+      --brand-glow: -4px 12px 30px -10px rgba(139,90,43,0.28), 4px 12px 30px -10px rgba(201,162,39,0.28);
+
+      --accent: #C9A227;
+      --accent-light: #E0BC4A;
+
+      --grey-bg: #F5EBDF;                 /* light brown page tint */
+      --grey-border: #E8D5B8;
+      --text-dark: #5D4037;
+      --text-muted: #6B4E3D;
+      --white: #FFF9F0;                   /* warm off-white */
       --radius: 16px;
       --radius-sm: 10px;
-      --shadow-sm: 0 4px 12px rgba(0,0,0,0.03), 0 1px 4px rgba(0,0,0,0.02);
-      --shadow-md: 0 12px 28px -8px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.03);
-      --shadow-lg: 0 24px 48px -12px rgba(0,0,0,0.12);
+      --shadow-sm: 0 4px 12px rgba(139,90,43,0.08), 0 1px 4px rgba(139,90,43,0.05);
+      --shadow-md: 0 12px 28px -8px rgba(139,90,43,0.14), 0 4px 12px rgba(139,90,43,0.08);
+      --shadow-lg: 0 24px 48px -12px rgba(43,24,16,0.28);
       --transition: all 0.25s ease;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--white);
+      background-color: #5D4037;
       color: var(--text-dark);
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
@@ -102,21 +106,24 @@
 
     /* ---------- HEADER ---------- */
     .header {
-      position: sticky; top: 0; z-index: 1000;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--grey-border);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      position: relative;
+      top: auto;
+      z-index: 10;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-bottom: none;
+      box-shadow: none;
     }
 
     .nav-bar {
       display: flex; align-items: center; justify-content: space-between;
-      height: 100px; gap: 24px;
+      height: 130px; gap: 24px;
     }
 
     .logo { display: flex; align-items: center; flex-shrink: 0; }
     .logo img {
-      height: 80px; width: auto; object-fit: contain; display: block;
+      height: 110px; width: auto; object-fit: contain; display: block;
     }
 
     .nav-links {
@@ -143,7 +150,7 @@
 
     .dropdown-menu {
       position: absolute; top: 100%; left: 0;
-      background: white; border: 1px solid var(--grey-border);
+      background: #FFF9F0; border: 1px solid #E8D5B8;
       border-radius: 14px; box-shadow: var(--shadow-lg);
       padding: 10px; min-width: 240px;
       opacity: 0; visibility: hidden; transform: translateY(8px);
@@ -163,32 +170,49 @@
     .nav-actions { display: flex; gap: 10px; align-items: center; }
     .hamburger { display: none; font-size: 1.6rem; color: var(--navy); background: none; }
 
-    /* ---------- HERO ---------- */
-    .hero {
-      position: relative; overflow: hidden;
-      background: radial-gradient(ellipse at top right, #16294a 0%, var(--navy) 50%, #060e1c 100%);
-      color: white; padding: 90px 0 110px;
-    }
-    .hero::before {
-      content: ''; position: absolute; top: -200px; right: -200px;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(233,30,99,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
+    /* ---------- HERO (full-page fixed background) ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: white;
+  padding: 120px 0 80px;
+  background-image: url('https://i.ibb.co/Dg8NGrmY/3rd-image.png');
+  background-size: cover;
+  background-position: center 0%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+    .hero::before { display: none; }
     .hero-grid {
-      display: grid; grid-template-columns: 1.05fr 0.95fr;
-      gap: 64px; align-items: center; position: relative; z-index: 1;
-    }
+  display: block;
+  position: relative;
+  z-index: 1;
+}
     .hero-label {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: rgba(233,30,99,0.1); border: 1px solid rgba(233,30,99,0.25);
-      color: var(--brand-pink-light); font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      padding: 8px 18px; border-radius: 50px; margin-bottom: 28px;
+      display: inline-flex; align-items: center; gap: 12px;
+      color: #E0BC4A;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 6px 0 6px 18px;
+      margin: 0 auto 30px;
+      position: relative;
+      background: none;
+      border: 0;
+      border-radius: 0;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.55);
     }
     .hero-label::before {
-      content: ''; width: 6px; height: 6px; border-radius: 50%;
-      background: var(--brand-pink); box-shadow: 0 0 12px var(--brand-pink);
+      content: ''; display: block; position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px; border-radius: 2px;
+      background: var(--brand-gradient-v);
+      box-shadow: none;
     }
     .hero h1 {
       font-family: 'Playfair Display', serif;
@@ -208,10 +232,19 @@
     }
     .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
     .btn-primary-hero {
-      background: var(--brand-gradient);
-      color: #fff; padding: 16px 34px; border-radius: 50px;
+      background: linear-gradient(135deg, #4A2C1D 0%, #8B5A2B 100%);
+      color: #FFF3E0;
+      border: 1.5px solid #C9A227;
+      padding: 16px 34px; border-radius: 6px;
       font-weight: 600; font-size: 0.95rem;
-      box-shadow: 0 10px 30px -6px rgba(233,30,99,0.40);
+      box-shadow: 0 10px 30px -6px rgba(139,90,43,0.45);
+      transition: all 0.25s ease;
+    }
+    .btn-primary-hero:hover {
+      background: linear-gradient(135deg, #8B5A2B 0%, #C9A227 100%);
+      color: #5D4037;
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px -8px rgba(201,162,39,0.55);
     }
     .btn-primary-hero:hover { transform: translateY(-3px); box-shadow: 0 16px 40px -8px rgba(233,30,99,0.55); }
     .btn-outline-hero {
@@ -277,14 +310,14 @@
     }
     .category-card {
       border: 2px solid transparent;
-      background: var(--brand-card-fill) padding-box, var(--brand-gradient-soft) border-box;
+      background: var(--brand-card-fill) padding-box, linear-gradient(135deg, #4A2C1D 0%, #C9A227 50%, #4A2C1D 100%) border-box;
       border-radius: var(--radius);
       box-shadow: var(--shadow-sm); overflow: hidden;
       transition: var(--transition); cursor: pointer;
     }
     .category-card:hover {
       transform: translateY(-6px); box-shadow: var(--brand-glow);
-      background: var(--brand-card-fill) padding-box, var(--brand-gradient) border-box;
+      background: var(--brand-card-fill) padding-box, linear-gradient(135deg, #5D4037 0%, #E0BC4A 50%, #5D4037 100%) border-box;
     }
     .category-img { height: 160px; background: #eef2f6; overflow: hidden; }
     .category-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
@@ -293,7 +326,7 @@
     .category-info h4 { font-size: 1.15rem; margin-bottom: 6px; }
     .category-info p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px; }
     .category-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--text-muted); }
-    .category-meta span { background: #f1f5f9; padding: 4px 10px; border-radius: 20px; font-weight: 500; }
+    .category-meta span { background: #EFE0C9; padding: 4px 10px; border-radius: 20px; font-weight: 500; }
     .view-products { font-weight: 600; color: var(--brand-pink); font-size: 0.85rem; display: flex; align-items: center; gap: 4px; }
 
     /* ---------- FEATURED PRODUCTS ---------- */
@@ -301,15 +334,15 @@
     .product-card {
       position: relative;
       border: 2px solid transparent;
-      background: var(--brand-card-fill) padding-box, var(--brand-gradient-soft) border-box;
+      background: var(--brand-card-fill) padding-box, linear-gradient(135deg, #4A2C1D 0%, #C9A227 50%, #4A2C1D 100%) border-box;
       border-radius: var(--radius); overflow: hidden;
       transition: var(--transition); display: flex; flex-direction: column;
     }
     .product-card:hover {
       transform: translateY(-4px); box-shadow: var(--brand-glow);
-      background: var(--brand-card-fill) padding-box, var(--brand-gradient) border-box;
+      background: var(--brand-card-fill) padding-box, linear-gradient(135deg, #5D4037 0%, #E0BC4A 50%, #5D4037 100%) border-box;
     }
-    .product-img { height: 200px; background: #f1f5f9; overflow: hidden; }
+    .product-img { height: 200px; background: #EFE0C9; overflow: hidden; }
     .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
     .product-card:hover .product-img img { transform: scale(1.03); }
     .product-info { padding: 18px; flex: 1; display: flex; flex-direction: column; }
@@ -319,19 +352,19 @@
     .product-code { font-size: 0.7rem; color: var(--brand-pink); margin-bottom: 12px; background: var(--brand-pink-bg); display: inline-block; padding: 2px 8px; border-radius: 12px; }
     .product-actions { margin-top: auto; display: flex; gap: 8px; flex-wrap: wrap; }
     .btn-small { padding: 8px 12px; font-size: 0.75rem; border-radius: 30px; font-weight: 500; }
-    .btn-small-outline { border: 1px solid var(--grey-border); background: white; color: var(--navy); }
+    .btn-small-outline { border: 1px solid #E8D5B8; background: #FFF9F0; color: var(--navy); }
     .btn-small-outline:hover { border-color: var(--brand-pink); color: var(--brand-pink); }
 
     /* ---------- SEARCH BAR ---------- */
     .search-section {
-      background: var(--grey-bg); padding: 32px 0;
+      background: #F5EBDF; padding: 32px 0;
       border-top: 1px solid var(--grey-border);
       border-bottom: 1px solid var(--grey-border);
     }
     .search-bar {
       display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
-      background: white; border-radius: 60px; padding: 8px 8px 8px 24px;
-      box-shadow: 0 10px 28px rgba(11,26,46,0.07); border: 1px solid #e2e8f0;
+      background: #FFF9F0; border-radius: 60px; padding: 8px 8px 8px 24px;
+      box-shadow: 0 10px 28px rgba(11,26,46,0.07); border: 1px solid #E8D5B8;
       max-width: 900px; margin: 0 auto;
     }
     .search-bar i { color: var(--brand-pink); }
@@ -340,7 +373,7 @@
       min-width: 200px; outline: none; background: transparent;
     }
     .filter-select {
-      border: none; background: #f1f5f9; padding: 10px 14px;
+      border: none; background: #EFE0C9; padding: 10px 14px;
       border-radius: 40px; font-size: 0.8rem; color: var(--navy);
       font-weight: 500; outline: none; cursor: pointer;
     }
@@ -348,41 +381,121 @@
     .search-count { font-size: 0.82rem; color: var(--text-muted); margin-top: 10px; text-align: center; }
 
     /* ---------- BRANDS / INDUSTRIES ---------- */
-    .brand-grid, .industry-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 24px;
-    }
-    .brand-card, .industry-card {
-      border: 2px solid transparent;
-      background: var(--brand-card-fill) padding-box, var(--brand-gradient-soft) border-box;
-      border-radius: var(--radius-sm); padding: 24px 16px;
-      text-align: center; transition: var(--transition);
-    }
-    .brand-card:hover, .industry-card:hover {
-      background: var(--brand-card-fill) padding-box, var(--brand-gradient) border-box;
-      box-shadow: 0 0 0 1px rgba(233,30,99,0.10), var(--brand-glow);
-    }
-    .brand-logo {
-      height: 60px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;
-      background: var(--brand-gradient-h);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent; color: transparent;
-    }
-    .industry-card i {
-      width: 56px; height: 56px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 14px; font-size: 1.4rem; color: #fff;
-      background: var(--brand-gradient);
-    }
+    /* ================= BRAND + INDUSTRY CARDS (centered, brown) ================= */
+.brand-grid, .industry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+}
+
+/* Brand card — brown gradient fill, centered text */
+.brand-card {
+  position: relative;
+  padding: 32px 20px;
+  text-align: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4A2C1D 0%, #5D4037 55%, #3E2723 100%);
+  border: 1px solid rgba(212,175,106,0.28);
+  box-shadow: 0 14px 32px -16px rgba(0,0,0,0.55);
+  transition: all 0.28s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 170px;
+}
+.brand-card:hover {
+  transform: translateY(-5px);
+  border-color: #C9A227;
+  box-shadow: 0 22px 45px -16px rgba(201,162,39,0.45);
+}
+
+/* Brand logo (text) — gold on brown */
+.brand-logo {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #E0BC4A 0%, #C9A227 55%, #8B5A2B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Brand description text */
+.brand-card p {
+  font-size: 0.8rem !important;
+  color: #E8D5B8 !important;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Industry card — brown gradient fill, centered */
+.industry-card {
+  position: relative;
+  padding: 32px 20px;
+  text-align: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3E2723 0%, #5D4037 55%, #4A2C1D 100%);
+  border: 1px solid rgba(212,175,106,0.28);
+  box-shadow: 0 14px 32px -16px rgba(0,0,0,0.55);
+  transition: all 0.28s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 190px;
+}
+.industry-card:hover {
+  transform: translateY(-5px);
+  border-color: #C9A227;
+  box-shadow: 0 22px 45px -16px rgba(201,162,39,0.45);
+}
+
+.industry-card i {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 1.4rem;
+  color: #FFF3E0;
+  background: linear-gradient(135deg, #8B5A2B 0%, #C9A227 100%);
+  box-shadow: 0 8px 20px -6px rgba(201,162,39,0.5);
+}
+
+.industry-card h4 {
+  color: #FFF3E0;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+
+.industry-card p {
+  font-size: 0.78rem !important;
+  color: #E8D5B8 !important;
+  margin: 0;
+  line-height: 1.5;
+}
 
     /* ---------- FEATURES ---------- */
     .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
     .feature-item {
-      background: white; padding: 32px 24px; border-radius: var(--radius);
-      border: 1px solid var(--grey-border); transition: var(--transition); text-align: center;
+      background: #FFF9F0; padding: 32px 24px; border-radius: var(--radius);
+      border: 1px solid #E8D5B8; transition: var(--transition); text-align: center;
     }
     .feature-item:hover { border-color: var(--accent-light); box-shadow: var(--shadow-sm); }
     .feature-icon {
-      width: 56px; height: 56px; background: var(--brand-blue-bg); border-radius: 16px;
+      width: 56px; height: 56px; background: #FBF4E6; border-radius: 16px;
       display: flex; align-items: center; justify-content: center;
       font-size: 1.6rem; color: var(--brand-blue); margin: 0 auto 20px;
     }
@@ -391,7 +504,7 @@
 
     /* ---------- STATS ---------- */
     .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
-    .stat-item { text-align: center; background: white; padding: 24px 12px; border-radius: var(--radius-sm); border: 1px solid var(--grey-border); }
+    .stat-item { text-align: center; background: #FFF9F0; padding: 24px 12px; border-radius: var(--radius-sm); border: 1px solid #E8D5B8; }
     .stat-number { font-size: 2.4rem; font-weight: 700; color: var(--navy); letter-spacing: -0.03em; }
     .stat-number::after {
       content: ''; display: block; width: 36px; height: 3px;
@@ -441,19 +554,19 @@
     }
     .modal-backdrop.open { display: flex; }
     .modal {
-      background: white; width: min(920px, 100%); max-height: 92vh;
+      background: #FFF9F0; width: min(920px, 100%); max-height: 92vh;
       overflow: auto; border-radius: 22px;
       box-shadow: 0 30px 80px rgba(0,0,0,0.3); position: relative;
     }
     .modal-head {
       padding: 24px 26px; border-bottom: 1px solid var(--grey-border);
       display: flex; align-items: center; justify-content: space-between; gap: 15px;
-      position: sticky; top: 0; background: white; z-index: 10;
+      position: sticky; top: 0; background: #FFF9F0; z-index: 10;
       border-radius: 22px 22px 0 0;
     }
     .modal-close {
       width: 38px; height: 38px; border-radius: 50%;
-      background: #f1f5f9; color: #334155; font-size: 18px;
+      background: #EFE0C9; color: #334155; font-size: 18px;
     }
     .modal-close:hover { background: #e2e8f0; }
     .modal-body { padding: 26px; }
@@ -463,7 +576,7 @@
 
     .gallery { position: relative; }
     .gallery-main {
-      border-radius: 16px; overflow: hidden; background: #f8fafc;
+      border-radius: 16px; overflow: hidden; background: #F5EBDF;
       position: relative; aspect-ratio: 1/1;
     }
     .gallery-main img { width: 100%; height: 100%; object-fit: cover; }
@@ -472,7 +585,7 @@
       gap: 10px; margin-top: 12px;
     }
     .gallery-thumb {
-      border-radius: 10px; overflow: hidden; background: #f1f5f9;
+      border-radius: 10px; overflow: hidden; background: #EFE0C9;
       cursor: pointer; border: 2px solid transparent;
       transition: var(--transition); aspect-ratio: 1/1;
     }
@@ -488,14 +601,14 @@
       cursor: pointer; box-shadow: var(--shadow-sm); color: var(--navy);
       z-index: 5; transition: var(--transition); border: none;
     }
-    .gallery-nav:hover { background: white; box-shadow: var(--shadow-md); }
+    .gallery-nav:hover { background: #FFF9F0; box-shadow: var(--shadow-md); }
     .gallery-nav.prev { left: 12px; }
     .gallery-nav.next { right: 12px; }
 
     .product-detail-info h2 { font-size: 1.8rem; margin-bottom: 8px; color: var(--navy); }
     .detail-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
     .detail-badge {
-      font-size: 0.72rem; background: #f1f5f9; color: #475569;
+      font-size: 0.72rem; background: #EFE0C9; color: #475569;
       padding: 5px 12px; border-radius: 20px; font-weight: 600;
     }
     .detail-badge.brand, .detail-badge.gold { background: var(--brand-pink-bg); color: var(--brand-pink); }
@@ -505,8 +618,8 @@
     }
     .detail-specs {
       display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-      margin-bottom: 24px; padding: 18px; background: #f8fafc;
-      border-radius: 12px; border: 1px solid var(--grey-border);
+      margin-bottom: 24px; padding: 18px; background: #F5EBDF;
+      border-radius: 12px; border: 1px solid #E8D5B8;
     }
     .detail-specs div { font-size: 0.85rem; }
     .detail-specs strong { color: var(--navy); display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
@@ -523,7 +636,7 @@
       border: none; cursor: pointer; transition: var(--transition);
     }
     .tab-btn.active { background: var(--navy); color: white; }
-    .tab-btn:hover:not(.active) { background: #f1f5f9; color: var(--navy); }
+    .tab-btn:hover:not(.active) { background: #EFE0C9; color: var(--navy); }
     .tab-content { display: none; font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; }
     .tab-content.active { display: block; }
     .tab-content ul { padding-left: 20px; margin-top: 8px; }
@@ -533,8 +646,8 @@
     .contact-page { padding: 80px 0; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
     .contact-info-card {
-      background: white; border-radius: var(--radius); padding: 32px;
-      border: 1px solid var(--grey-border); box-shadow: var(--shadow-sm);
+      background: #FFF9F0; border-radius: var(--radius); padding: 32px;
+      border: 1px solid #E8D5B8; box-shadow: var(--shadow-sm);
     }
     .contact-info-card h3 { margin-bottom: 24px; color: var(--navy); }
     .contact-item {
@@ -557,22 +670,22 @@
     .qr-card h3 { color: white; margin-bottom: 8px; }
     .qr-card p { color: #a8b6c9; font-size: 0.85rem; margin-bottom: 20px; }
     .qr-code-box {
-      background: white; padding: 16px; border-radius: 16px;
+      background: #FFF9F0; padding: 16px; border-radius: 16px;
       display: inline-block; margin-bottom: 16px;
     }
     .qr-code-box img { width: 180px; height: 180px; }
     .qr-card .btn-whatsapp { margin-top: 8px; }
 
     .contact-form-card {
-      background: white; border-radius: var(--radius); padding: 32px;
-      border: 1px solid var(--grey-border); box-shadow: var(--shadow-sm);
+      background: #FFF9F0; border-radius: var(--radius); padding: 32px;
+      border: 1px solid #E8D5B8; box-shadow: var(--shadow-sm);
     }
     .contact-form-card h3 { margin-bottom: 24px; color: var(--navy); }
     .form-group { margin-bottom: 18px; }
     .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: #334155; margin-bottom: 6px; }
     .form-group input, .form-group textarea, .form-group select {
       width: 100%; padding: 12px 14px; border: 1px solid #dbe3eb;
-      border-radius: 10px; font: inherit; outline: none; background: #fff;
+      border-radius: 10px; font: inherit; outline: none; background: #FFF9F0;
       transition: var(--transition);
     }
     .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
@@ -584,7 +697,7 @@
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 1200px) {
       .nav-links > a, .dropdown > a { padding: 10px 10px; font-size: 0.82rem; }
-      .logo img { height: 68px; }
+      .logo img { height: 90px; }
     }
     @media (max-width: 1100px) {
       .nav-links { display: none; }
@@ -613,8 +726,8 @@
       .footer-grid { grid-template-columns: 1fr; }
       .search-bar { border-radius: 24px; padding: 16px; flex-direction: column; align-items: stretch; }
       .filter-select { width: 100%; }
-      .logo img { height: 55px; }
-      .nav-bar { height: 80px; }
+      .logo img { height: 80px; }
+      .nav-bar { height: 100px; }
       .detail-specs { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .gallery-thumbs { grid-template-columns: repeat(3, 1fr); }
@@ -625,7 +738,7 @@
     .mt-4 { margin-top: 24px; }
     .mobile-menu-panel {
       display: none; position: absolute; left: 12px; right: 12px; top: 90px;
-      background: white; border: 1px solid var(--grey-border);
+      background: #FFF9F0; border: 1px solid #E8D5B8;
       border-radius: 16px; padding: 10px; box-shadow: var(--shadow-lg);
       z-index: 100; max-height: 80vh; overflow-y: auto;
     }
@@ -674,14 +787,14 @@
       position: fixed; bottom: 96px; left: 24px;
       width: 380px; max-width: calc(100vw - 32px);
       height: 560px; max-height: calc(100vh - 140px);
-      background: white; border-radius: 20px;
+      background: #FFF9F0; border-radius: 20px;
       box-shadow: 0 30px 80px rgba(10,22,40,0.3);
       display: flex; flex-direction: column;
       z-index: 997; overflow: hidden;
       opacity: 0; visibility: hidden;
       transform: translateY(20px) scale(0.96);
       transition: var(--transition);
-      border: 1px solid var(--grey-border);
+      border: 1px solid #E8D5B8;
     }
     .ai-panel.open {
       opacity: 1; visibility: visible;
@@ -716,7 +829,7 @@
 
     .ai-messages {
       flex: 1; overflow-y: auto; padding: 18px;
-      background: #f8fafc; display: flex; flex-direction: column; gap: 14px;
+      background: #F5EBDF; display: flex; flex-direction: column; gap: 14px;
     }
     .ai-messages::-webkit-scrollbar { width: 6px; }
     .ai-messages::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
@@ -730,8 +843,8 @@
       font-size: 0.87rem; line-height: 1.5;
     }
     .ai-msg-bot .ai-msg-bubble {
-      background: white; color: var(--text-dark);
-      border: 1px solid var(--grey-border);
+      background: #FFF9F0; color: var(--text-dark);
+      border: 1px solid #E8D5B8;
       border-bottom-left-radius: 4px;
     }
     .ai-msg-user .ai-msg-bubble {
@@ -745,7 +858,7 @@
       display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;
     }
     .ai-quick-replies button {
-      background: white; border: 1px solid var(--grey-border);
+      background: #FFF9F0; border: 1px solid #E8D5B8;
       color: var(--navy); font-size: 0.75rem; font-weight: 500;
       padding: 7px 12px; border-radius: 20px; cursor: pointer;
       transition: var(--transition); font-family: inherit;
@@ -757,7 +870,7 @@
 
     .ai-typing {
       display: flex; gap: 4px; padding: 12px 16px;
-      background: white; border: 1px solid var(--grey-border);
+      background: #FFF9F0; border: 1px solid #E8D5B8;
       border-radius: 16px; border-bottom-left-radius: 4px;
       width: fit-content;
     }
@@ -774,10 +887,10 @@
 
     .ai-input-wrap {
       display: flex; gap: 8px; padding: 12px 14px;
-      background: white; border-top: 1px solid var(--grey-border);
+      background: #FFF9F0; border-top: 1px solid var(--grey-border);
     }
     .ai-input-wrap input {
-      flex: 1; border: 1px solid var(--grey-border);
+      flex: 1; border: 1px solid #E8D5B8;
       border-radius: 24px; padding: 10px 16px;
       font: inherit; font-size: 0.85rem; outline: none;
       transition: var(--transition);
@@ -794,7 +907,7 @@
 
     .ai-footer-note {
       text-align: center; font-size: 0.68rem;
-      color: #94a3b8; padding: 0 0 10px; background: white;
+      color: #94a3b8; padding: 0 0 10px; background: #FFF9F0;
     }
 
     @media (max-width: 640px) {
@@ -813,7 +926,7 @@
       --shadow-lg: 0 20px 40px -12px rgba(10,22,40,.18);
       --transition: color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
     }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 140px; }
     body { text-rendering: optimizeLegibility; }
     h1, h2, h3 { text-wrap: balance; }
     h2 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: clamp(1.7rem, 2.6vw, 2.2rem); color: var(--navy); margin-bottom: 10px; }
@@ -822,23 +935,57 @@
 
     /* Buttons: squared, confident, no glow */
     .btn-primary, .btn-primary-hero, .btn-outline, .btn-outline-hero, .btn-whatsapp { border-radius: 6px; }
-    .btn-primary, .btn-primary-hero { background: var(--brand-gradient); color: #fff; box-shadow: 0 6px 16px -4px rgba(233,30,99,.40); }
+    .btn-primary, .btn-primary-hero {
+      background: linear-gradient(135deg, #4A2C1D 0%, #8B5A2B 100%);
+      color: #FFF3E0;
+      border: 1.5px solid #C9A227;
+      padding: 16px 34px; border-radius: 6px;
+      font-weight: 600; font-size: 0.95rem;
+      box-shadow: 0 10px 30px -6px rgba(139,90,43,0.45);
+      transition: all 0.25s ease;
+    }
+    .btn-primary-hero:hover {
+      background: linear-gradient(135deg, #8B5A2B 0%, #C9A227 100%);
+      color: #5D4037;
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px -8px rgba(201,162,39,0.55);
+    }
     .btn-primary:hover, .btn-primary-hero:hover { background: var(--brand-gradient); transform: translateY(-2px); box-shadow: 0 12px 28px -6px rgba(233,30,99,.50); }
     .btn-outline:hover { background: var(--brand-pink-bg); }
     .btn-small { border-radius: 6px; }
 
     /* Header: slimmer, calmer */
-    .header { box-shadow: none; background: rgba(255,255,255,.97); }
-    .nav-bar { height: 76px; }
-    .logo img { height: 52px; }
+    .header { box-shadow: none; background: transparent; }
+    .nav-bar { height: 120px; }
+    .logo img { height: 100px; }
     .nav-links > a, .dropdown > a { border-radius: 6px; }
     .dropdown-menu { border-radius: 10px; }
 
     /* Hero */
-    .hero { padding: 96px 0 104px; }
+    .hero { padding: 120px 0 80px; }
     .hero::before { display: none; }
-    .hero-label { position: relative; background: none; border: 0; border-radius: 0; padding: 2px 0 2px 16px; letter-spacing: .12em; font-size: .75rem; margin-bottom: 26px; }
-    .hero-label::before { content: ''; display: block; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; height: auto; border-radius: 2px; background: var(--brand-gradient-v); box-shadow: none; }
+    .hero-label {
+      display: inline-flex; align-items: center; gap: 12px;
+      color: #E0BC4A;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 6px 0 6px 18px;
+      margin: 0 auto 30px;
+      position: relative;
+      background: none;
+      border: 0;
+      border-radius: 0;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+    }
+    .hero-label::before {
+      content: ''; display: block; position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px; border-radius: 2px;
+      background: var(--brand-gradient-v);
+      box-shadow: none;
+    }
     .hero h1 { font-size: clamp(2.3rem, 4.6vw, 3.7rem); line-height: 1.1; }
     .hero h1 .highlight { font-style: normal; color: transparent; font-weight: 600; }
     .hero p { color: #b6c3d4; font-weight: 400; line-height: 1.7; }
@@ -882,9 +1029,9 @@
     }
     @media (max-width: 768px) {
       section { padding: 64px 0; }
-      .nav-bar { height: 68px; }
-      .logo img { height: 44px; }
-      .hero { padding: 64px 0 72px; }
+      .nav-bar { height: 90px; }
+      .logo img { height: 70px; }
+      .hero { padding: 120px 0 80px; }
       .hero-image-wrap img { height: 320px; }
     }
     /* ================= BRAND LAYER (DDA pink + blue) ================= */
@@ -939,7 +1086,7 @@
   object-fit: cover;
   border-radius: 12px;
   display: block;
-  background: #fff;
+  background: #FFF9F0;
 }
 
 .ceo-image-frame:hover {
@@ -1171,7 +1318,7 @@
 /* ================= HERO ROTATING GALLERY ================= */
 .hero-gallery-section {
   padding: 72px 0 40px;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #F5EBDF 0%, #FFF9F0 100%);
 }
 
 .hero-gallery {
@@ -1382,7 +1529,7 @@
   /* ================= HERO ROTATING GALLERY ================= */
 .hero-gallery-section {
   padding: 72px 0 40px;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #F5EBDF 0%, #FFF9F0 100%);
 }
 
 .hero-gallery {
@@ -1582,14 +1729,14 @@
 /* ================= AUTO-SCROLLING PRODUCT STRIP ================= */
 .strip-section {
   padding: 48px 0 0;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  background: linear-gradient(180deg, #FFF9F0 0%, #F5EBDF 100%);
 }
 .strip-header { text-align: center; margin-bottom: 28px; }
 .strip-header h2 { margin-bottom: 4px; }
 .strip-wrap {
   width: 100%; overflow: hidden;
   padding: 22px 0;
-  background: #f8fafc;
+  background: #F5EBDF;
   position: relative;
   margin: 0 0 8px;
   mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
@@ -1773,7 +1920,300 @@
   .promo-hero-badges { gap: 8px; }
   .promo-hero-badge { font-size: 0.72rem; padding: 5px 11px; }
 }
-</style>
+    /* ---------- HERO MOBILE FALLBACK ---------- */
+    @media (max-width: 900px) {
+      .hero {
+        background-attachment: scroll;
+        background-position: center top;
+        min-height: 90vh;
+        padding: 120px 0 80px;
+      }
+    }
+
+/* ================= LUXURY PRODUCT CARDS ================= */
+.lux-section {
+  background: #5D4037;
+  padding: 70px 0 80px;
+}
+.lux-header { text-align: center; margin-bottom: 44px; }
+.lux-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f5e6c8;
+  margin: 0;
+}
+.lux-header h2 span { color: #d4af6a; font-style: italic; }
+
+/* --- grid: more space between cards --- */
+.lux-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 90px;                     /* bigger gap between cards */
+  max-width: 1120px;             /* narrower overall column */
+  margin: 0 auto;                /* centered */
+}
+
+/* --- smaller card --- */
+.lux-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  background: linear-gradient(135deg, #2a1005 0%, #12080a 60%, #1a0808 100%);
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 340px;             /* was 480px */
+  box-shadow: 0 24px 55px -18px rgba(0,0,0,0.6);
+}
+.lux-card::before {
+  content: '';
+  position: absolute;
+  top: -80px; left: -80px;
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, rgba(180,40,60,0.28) 0%, transparent 65%);
+  pointer-events: none;
+}
+.lux-card-text {
+  position: relative;
+  z-index: 2;
+  padding: 36px 32px 36px 40px;   /* was 56/48/56 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.lux-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.25rem, 1.8vw, 1.65rem);   /* smaller title */
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f5e6c8;
+  margin-bottom: 14px;
+  line-height: 1.15;
+}
+.lux-card-desc {
+  font-size: 0.82rem;             /* was 0.92rem */
+  line-height: 1.6;
+  color: #c9b8a8;
+  margin-bottom: 20px;
+  max-width: 460px;
+}
+.lux-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px 18px;                  /* tighter feature grid */
+  margin-bottom: 24px;
+}
+.lux-feature { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: #e0d2bf; }
+.lux-feature i { color: #d4af6a; font-size: 0.68rem; flex-shrink: 0; }
+
+.lux-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  padding: 10px 22px;             /* smaller button */
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #f5e6c8;
+  background: transparent;
+  border: 1.5px solid #d4af6a;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+.lux-view-btn:hover { background: #d4af6a; color: #1a0f08; transform: translateY(-2px); }
+
+.lux-card-image { position: relative; overflow: hidden; background: #0a0605; min-height: 340px; }
+.lux-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.lux-card:hover .lux-card-image img { transform: scale(1.04); }
+
+.lux-pills {
+  display: flex; justify-content: center; gap: 12px;
+  margin-top: 48px; flex-wrap: wrap;
+}
+.lux-pill {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 24px;
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: #f5e6c8; background: #5D4037;
+  border: 1px solid rgba(212,175,106,0.25);
+  border-radius: 6px; cursor: pointer;
+  transition: all 0.25s ease; font-family: inherit;
+}
+.lux-pill:hover { border-color: #d4af6a; }
+.lux-pill.active {
+  background: linear-gradient(135deg, #c9856a 0%, #b8705e 100%);
+  color: #1a0f08; border-color: transparent;
+}
+.lux-pill i { font-size: 0.85rem; }
+
+@media (max-width: 900px) {
+  .lux-grid { gap: 40px; }
+  .lux-card { grid-template-columns: 1fr; min-height: auto; }
+  .lux-card-image { height: 260px; min-height: 260px; order: -1; }
+  .lux-card-text { padding: 28px 22px; }
+  .lux-features { grid-template-columns: 1fr; }
+}
+  
+
+    /* Requested final polish: remove the cream top edge and continue the hero image
+       behind the complete Explore Our Products section. */
+    html, body { margin: 0 !important; border: 0 !important; }
+    .header, header.header {
+      margin-top: 0 !important;
+      border-top: 0 !important;
+      border-bottom: 0 !important;
+      box-shadow: none !important;
+      background: transparent !important;
+    }
+    .page-view.active { border-top: 0 !important; }
+    .hero {
+      margin-top: 0 !important;
+      border-top: 0 !important;
+      background-image: url('https://i.ibb.co/Dg8NGrmY/3rd-image.png') !important;
+      background-size: cover !important;
+      background-position: center top !important;
+      background-repeat: no-repeat !important;
+      background-attachment: fixed !important;
+    }
+    .categories-image-continuation {
+      position: relative;
+      isolation: isolate;
+      border-top: 0 !important;
+      background-color: #1a0f08 !important;
+      background-image: linear-gradient(rgba(26,15,8,.58), rgba(26,15,8,.76)), url('https://i.ibb.co/Dg8NGrmY/3rd-image.png') !important;
+      background-size: cover !important;
+      background-position: center top !important;
+      background-repeat: no-repeat !important;
+      background-attachment: fixed !important;
+    }
+    .categories-image-continuation .section-header h2,
+    .categories-image-continuation .section-header p,
+    .categories-image-continuation .section-label { color: #fff !important; }
+    .categories-image-continuation .btn-outline {
+      color: #fff !important;
+      border-color: rgba(255,255,255,.7) !important;
+    }
+    @media (max-width: 768px) {
+      .hero, .categories-image-continuation { background-attachment: scroll !important; }
+    }
+
+
+    /* Final fix: prevent the white strip visible at the very top on initial load. */
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      outline: none !important;
+      background-color: #1a0f08 !important;
+    }
+    body {
+      background-image: url('https://i.ibb.co/Dg8NGrmY/3rd-image.png') !important;
+      background-size: cover !important;
+      background-position: center top !important;
+      background-repeat: no-repeat !important;
+      background-attachment: fixed !important;
+    }
+    .header, header.header, #page-home, .page-view, .page-view.active {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      border-top: none !important;
+      outline: none !important;
+    }
+    .header::before, .header::after, .hero::before, .hero::after {
+      border-top: none !important;
+      box-shadow: none !important;
+    }
+    .header { top: auto !important; position: relative !important; }
+    @media (max-width: 768px) {
+      body { background-attachment: scroll !important; }
+    }
+
+    /* ================= HERO MARQUEE PARAGRAPH ================= */
+    /* The hero tagline scrolls continuously from left to right, loops forever. */
+    .hero p.marquee-text,
+    .hero-marquee {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0 auto 40px;
+      padding: 0;
+      font-size: 1.35rem;
+      line-height: 1.7;
+      color: #E0BC4A;
+      font-weight: 300;
+      position: relative;
+    }
+    .hero-marquee-inner {
+      display: inline-block;
+      padding-left: 100%;
+      animation: heroMarquee 22s linear infinite;
+      will-change: transform;
+    }
+    .hero-marquee:hover .hero-marquee-inner { animation-play-state: paused; }
+    @keyframes heroMarquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    @media (max-width: 768px) {
+      .hero-marquee { font-size: 1.1rem; animation-duration: 30s; }
+    }
+
+    /* ================= HERO TOP BLOCK CENTERED ================= */
+    .hero-content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .hero-label {
+      display: inline-flex; align-items: center; gap: 12px;
+      color: #E0BC4A;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 6px 0 6px 18px;
+      margin: 0 auto 30px;
+      position: relative;
+      background: none;
+      border: 0;
+      border-radius: 0;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+    }
+    .hero h1 {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-buttons {
+      justify-content: center;
+    }
+    .trust-bar {
+      justify-content: center;
+    }
+    /* Keep marquee full-width even inside centered content */
+    .hero-marquee {
+      text-align: left;
+    }
+  </style>
 
 </head>
 <body>
@@ -1862,9 +2302,11 @@
             <span class="highlight">Trusted</span> Technology.<br>
             Proven Results.
           </h1>
-          <p class="fade-up d-2">
-            DDS Aesthetic LLC supplies premium laser, HIFU, and skincare equipment to clinics, aesthetic centers, and beauty professionals across the UAE and GCC.
-          </p>
+          <div class="hero-marquee fade-up d-2">
+            <div class="hero-marquee-inner">
+              DDS Aesthetic LLC supplies premium laser, HIFU, and skincare equipment to clinics, aesthetic centers, and beauty professionals across the UAE and GCC.
+            </div>
+          </div>
           <div class="hero-buttons fade-up d-3">
             <a href="#products" class="btn-primary-hero">Explore Products <i class="fas fa-arrow-right"></i></a>
             <a href="#" onclick="openQuoteModal(); return false;" class="btn-outline-hero">Request a Quote</a>
@@ -1875,27 +2317,12 @@
             <div class="trust-item"><i class="fas fa-truck-fast"></i><span><strong>GCC-Wide</strong> Delivery</span></div>
           </div>
         </div>
-        <div class="hero-visual fade-up d-2">
-          <div class="hero-image-wrap">
-            <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=900&auto=format&fit=crop" alt="Premium aesthetic equipment">
-            <div class="hero-badge">
-              <div class="hero-badge-icon"><i class="fas fa-certificate"></i></div>
-              <div class="hero-badge-text">
-                <strong>Authorized Distributor</strong>
-                <span>50+ Global Brands · 500+ Clients</span>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
     <!-- CATEGORIES -->
-    <section>
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <div class="section-label">Our Range</div>
+    <section class="categories-image-continuation"><div class="container"><div class="section-header"><div><div class="section-label">Our Range</div>
             <h2>Explore Our Products</h2>
             <p>Browse our carefully curated categories designed for aesthetic professionals.</p>
           </div>
@@ -1961,28 +2388,26 @@
       </div>
     </div>
 
-    <section id="products" style="padding-top: 40px;">
+    <section id="products" class="lux-section">
       <div class="container">
-        <div class="section-header">
-          <div>
-            <div class="section-label">Top Picks</div>
-            <h2>Featured Products</h2>
-          </div>
-          <a href="#" class="btn-outline" onclick="return false;">View All Products</a>
+        <div class="lux-header">
+          <h2>Core <span>Treatment</span> Pillars</h2>
         </div>
-        <div class="product-grid" id="productGrid">
-          <!-- Products injected by JS -->
-        </div>
-        <div id="noResults" class="no-results" style="display:none; text-align:center; padding:55px 20px; color:var(--text-muted); grid-column:1/-1;">
-          <i class="fas fa-box-open" style="font-size:2rem;margin-bottom:10px;display:block;"></i>
-          <strong>No matching products found</strong><br>
-          <span>Try another search or clear the filters.</span>
+
+        <div class="lux-grid" id="luxGrid"></div>
+
+        <div class="lux-pills">
+          <button class="lux-pill active" data-filter="all"><i class="fas fa-spa"></i> All Products</button>
+          <button class="lux-pill" data-filter="Laser Systems"><i class="fas fa-bolt"></i> Laser Systems</button>
+          <button class="lux-pill" data-filter="HIFU Systems"><i class="fas fa-wave-square"></i> HIFU</button>
+          <button class="lux-pill" data-filter="Skincare &amp; Mesotherapy"><i class="fas fa-leaf"></i> Skincare</button>
+          <button class="lux-pill" data-filter="Machines &amp; Devices"><i class="fas fa-cog"></i> Machines</button>
         </div>
       </div>
     </section>
 
     <!-- BRANDS -->
-    <section style="background: var(--grey-bg);">
+    <section style="background: #F5EBDF;">
       <div class="container">
         <div class="section-header">
           <div><div class="section-label">Partners</div><h2>Brands We Represent</h2></div>
@@ -2022,14 +2447,14 @@
           <div class="promo-hero-overlay"></div>
 
           <div class="promo-hero-content">
-            <div class="promo-hero-tag">October 2026 · Exclusive Offer</div>
+            <div class="promo-hero-tag">October 2026 Â· Exclusive Offer</div>
             <h2 class="promo-hero-title">
               Elevate Your Clinic<br>
               with <span class="promo-hero-highlight">ASPICOM</span> Innovation
             </h2>
             <p class="promo-hero-desc">
               Authorized distribution of premium aesthetic and regenerative solutions across the UAE &amp; GCC.
-              This month only  exclusive pricing on ASPICOM, B-TOX®, Cosmuderm®, and the RenoXome® regenerative range.
+              This month only â€” exclusive pricing on ASPICOM, B-TOXÂ®, CosmudermÂ®, and the RenoXomeÂ® regenerative range.
             </p>
             <div class="promo-hero-badges">
               <span class="promo-hero-badge">? Authorized Distributor</span>
@@ -2089,14 +2514,14 @@
       <p style="max-width: 800px; color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
         Founded in 2018, ASPICOM has been growing steadily with an unwavering vision for beauty and health.
         ASPICOM has maintained its leading position in the aesthetic and therapeutic market based on the superior
-        quality and trust of customers of the Botulinum toxin product (B-TOX)® which was launched in 2019.
-        In addition, ASPICOM's unique R&amp;D expertise includes products such as Hyaluronic Acid Filler® (CosmuDerm®)
+        quality and trust of customers of the Botulinum toxin product (B-TOX)Ã‚Â® which was launched in 2019.
+        In addition, ASPICOM's unique R&amp;D expertise includes products such as Hyaluronic Acid FillerÃ‚Â® (CosmuDermÃ‚Â®)
         in 2018.
       </p>
 
       <div class="stats-grid" style="margin-top: 48px;">
         <div class="stat-item"><div class="stat-number">2018</div><div class="stat-label">Founded</div></div>
-        <div class="stat-item"><div class="stat-number">2019</div><div class="stat-label">B-TOX® Launched</div></div>
+        <div class="stat-item"><div class="stat-number">2019</div><div class="stat-label">B-TOXÃ‚Â® Launched</div></div>
         <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">Brands</div></div>
         <div class="stat-item"><div class="stat-number">500+</div><div class="stat-label">Customers</div></div>
       </div>
@@ -2104,7 +2529,7 @@
   </section>
 
   <!-- CEO Message -->
-<section style="background: var(--grey-bg);">
+<section style="background: #F5EBDF;">
   <div class="container">
     <div class="section-header">
       <div><div class="section-label">Leadership</div><h2>CEO Message</h2></div>
@@ -2235,7 +2660,7 @@
               </div>
               <div class="contact-item">
                 <div class="contact-item-icon"><i class="fas fa-clock"></i></div>
-                <div class="contact-item-text"><strong>Business Hours</strong><span>Sun – Thu: 9:00 AM – 6:00 PM</span></div>
+                <div class="contact-item-text"><strong>Business Hours</strong><span>Sun Ã¢â‚¬â€œ Thu: 9:00 AM Ã¢â‚¬â€œ 6:00 PM</span></div>
               </div>
             </div>
 
@@ -2408,7 +2833,7 @@
         </div>
       </div>
       <div style="border-top:1px solid rgba(255,255,255,0.1); margin-top:40px; padding-top:24px; text-align:center; font-size:0.8rem; color:#94a3b8;">
-        © 2025 BDS Aesthetic LLC. All rights reserved.
+        Ã‚Â© 2025 BDS Aesthetic LLC. All rights reserved.
       </div>
     </div>
   </footer>
@@ -2474,7 +2899,7 @@
           'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581092335876-4b5a2c6c4b4b?w=800&auto=format&fit=crop'
         ],
-        specs: { 'Wavelength': '755 nm', 'Spot Size': '6 – 20 mm', 'Pulse Duration': '2 – 20 ms', 'Energy': 'Up to 100 J/cm²', 'Cooling': 'Contact + Cryo', 'Power': '220V / 50-60Hz' },
+        specs: { 'Wavelength': '755 nm', 'Spot Size': '6 Ã¢â‚¬â€œ 20 mm', 'Pulse Duration': '2 Ã¢â‚¬â€œ 20 ms', 'Energy': 'Up to 100 J/cmÃ‚Â²', 'Cooling': 'Contact + Cryo', 'Power': '220V / 50-60Hz' },
         features: ['Fast hair removal', 'Pigmentation treatment', 'Vascular lesions', 'All skin types', 'Advanced cooling system', 'Large touchscreen display'],
         applications: ['Laser hair removal', 'Skin rejuvenation', 'Pigmentation correction', 'Vascular treatment']
       },
@@ -2487,7 +2912,7 @@
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop'
         ],
-        specs: { 'Type': 'Multi-wavelength platform', 'Wavelengths': '755 / 808 / 1064 nm', 'Spot Size': '8 – 18 mm', 'Energy': 'Up to 120 J/cm²', 'Display': '15" Touchscreen', 'Power': '220V / 50-60Hz' },
+        specs: { 'Type': 'Multi-wavelength platform', 'Wavelengths': '755 / 808 / 1064 nm', 'Spot Size': '8 Ã¢â‚¬â€œ 18 mm', 'Energy': 'Up to 120 J/cmÃ‚Â²', 'Display': '15" Touchscreen', 'Power': '220V / 50-60Hz' },
         features: ['Multi-wavelength capability', 'Fast treatment mode', 'Advanced safety sensors', 'Ergonomic handpiece', 'User-friendly interface'],
         applications: ['Hair removal', 'Skin tightening', 'Pigmentation', 'Vascular lesions']
       },
@@ -2500,7 +2925,7 @@
           'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581092335876-4b5a2c6c4b4b?w=800&auto=format&fit=crop'
         ],
-        specs: { 'Type': 'Botulinum Toxin Type A', 'Presentation': '100 U vial', 'Storage': '2 – 8 °C', 'Shelf Life': '24 months', 'Licensing': 'Medical professionals only' },
+        specs: { 'Type': 'Botulinum Toxin Type A', 'Presentation': '100 U vial', 'Storage': '2 Ã¢â‚¬â€œ 8 Ã‚Â°C', 'Shelf Life': '24 months', 'Licensing': 'Medical professionals only' },
         features: ['High purity formula', 'Consistent results', 'Long-lasting effect', 'Cold-chain delivery'],
         applications: ['Facial rejuvenation', 'Wrinkle reduction', 'Medical aesthetics']
       },
@@ -2526,7 +2951,7 @@
           'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop'
         ],
-        specs: { 'Type': 'Mesotherapy solution', 'Volume': '5 ml vial', 'Composition': 'HA + Vitamins + Minerals', 'Usage': 'Professional only', 'Storage': '2 – 8 °C' },
+        specs: { 'Type': 'Mesotherapy solution', 'Volume': '5 ml vial', 'Composition': 'HA + Vitamins + Minerals', 'Usage': 'Professional only', 'Storage': '2 Ã¢â‚¬â€œ 8 Ã‚Â°C' },
         features: ['Deep hydration', 'Skin brightening', 'Anti-aging benefits', 'Quick absorption'],
         applications: ['Mesotherapy', 'Skin boosters', 'Face & neck rejuvenation']
       },
@@ -2539,7 +2964,7 @@
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581092335876-4b5a2c6c4b4b?w=800&auto=format&fit=crop'
         ],
-        specs: { 'Type': 'HIFU', 'Cartridges': '1.5 / 3.0 / 4.5 mm', 'Energy': '0.1 – 2.0 J', 'Display': 'LCD', 'Power': '220V' },
+        specs: { 'Type': 'HIFU', 'Cartridges': '1.5 / 3.0 / 4.5 mm', 'Energy': '0.1 Ã¢â‚¬â€œ 2.0 J', 'Display': 'LCD', 'Power': '220V' },
         features: ['Precise depth control', 'Non-invasive', 'No downtime', 'Compact design'],
         applications: ['Skin lifting', 'Wrinkle reduction', 'Body contouring']
       },
@@ -2555,7 +2980,7 @@
         ],
         specs: { 'Type': 'Microfocused Ultrasound', 'Depth': '1.5 / 3.0 / 4.5 mm', 'Energy': 'Up to 1.2 J', 'Display': '15" Touchscreen', 'Power': '220V / 50-60Hz' },
         features: ['FDA-cleared', 'Deep collagen stimulation', 'No downtime', 'Visible lifting results'],
-        applications: ['Brow lift', 'Neck lift', 'Décolletage', 'Jawline definition']
+        applications: ['Brow lift', 'Neck lift', 'DÃƒÂ©colletage', 'Jawline definition']
       },
       'picosecond': {
         name: 'PICOSECOND LASER', code: 'BDS-PIC-008', category: 'Laser Systems', brand: 'BDS Aesthetic', availability: 'In Stock',
@@ -2566,7 +2991,7 @@
           'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop'
         ],
-        specs: { 'Wavelengths': '532 / 755 / 1064 nm', 'Pulse Duration': 'Picosecond', 'Spot Size': '2 – 10 mm', 'Energy': 'Up to 2.0 J', 'Display': '15" Touchscreen' },
+        specs: { 'Wavelengths': '532 / 755 / 1064 nm', 'Pulse Duration': 'Picosecond', 'Spot Size': '2 Ã¢â‚¬â€œ 10 mm', 'Energy': 'Up to 2.0 J', 'Display': '15" Touchscreen' },
         features: ['Ultra-fast pulses', 'Minimal discomfort', 'Effective on all ink colors', 'Safe for all skin types'],
         applications: ['Tattoo removal', 'Pigmentation', 'Skin rejuvenation', 'Melasma']
       },
@@ -2579,7 +3004,7 @@
           'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop'
         ],
-        specs: { 'Type': 'IPL SHR', 'Wavelength': '640 – 1200 nm', 'Spot Size': '10 – 50 mm', 'Energy': 'Up to 50 J/cm²', 'Display': '10" Touchscreen' },
+        specs: { 'Type': 'IPL SHR', 'Wavelength': '640 Ã¢â‚¬â€œ 1200 nm', 'Spot Size': '10 Ã¢â‚¬â€œ 50 mm', 'Energy': 'Up to 50 J/cmÃ‚Â²', 'Display': '10" Touchscreen' },
         features: ['Fast treatment mode', 'Comfortable pulses', 'All skin types', 'Large spot size'],
         applications: ['Hair removal', 'Skin rejuvenation', 'Vascular lesions', 'Pigmentation']
       },
@@ -2605,7 +3030,7 @@
           'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop'
         ],
-        specs: { 'Type': 'Mesotherapy solution', 'Volume': '5 ml / 10 ml vials', 'Composition': 'HA + Actives', 'Usage': 'Professional only', 'Storage': '2 – 8 °C' },
+        specs: { 'Type': 'Mesotherapy solution', 'Volume': '5 ml / 10 ml vials', 'Composition': 'HA + Actives', 'Usage': 'Professional only', 'Storage': '2 Ã¢â‚¬â€œ 8 Ã‚Â°C' },
         features: ['Deep hydration', 'Skin brightening', 'Anti-aging', 'Customizable protocols'],
         applications: ['Mesotherapy', 'Skin boosters', 'Face & body']
       },
@@ -2618,7 +3043,7 @@
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop'
         ],
-        specs: { 'Type': 'Cell therapy skincare', 'Volume': '5 ml vial', 'Composition': 'Growth factors + Peptides', 'Usage': 'Professional only', 'Storage': '2 – 8 °C' },
+        specs: { 'Type': 'Cell therapy skincare', 'Volume': '5 ml vial', 'Composition': 'Growth factors + Peptides', 'Usage': 'Professional only', 'Storage': '2 Ã¢â‚¬â€œ 8 Ã‚Â°C' },
         features: ['Cell regeneration', 'Anti-aging', 'Skin repair', 'Professional grade'],
         applications: ['Skin regeneration', 'Anti-aging', 'Post-treatment care']
       },
@@ -2632,7 +3057,7 @@
           'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format&fit=crop'
         ],
-        specs: { 'Type': 'Regenerative protocol', 'Volume': '5 ml vial', 'Composition': 'Growth factors + Peptides + HA', 'Usage': 'Professional only', 'Storage': '2 – 8 °C', 'Shelf Life': '24 months' },
+        specs: { 'Type': 'Regenerative protocol', 'Volume': '5 ml vial', 'Composition': 'Growth factors + Peptides + HA', 'Usage': 'Professional only', 'Storage': '2 Ã¢â‚¬â€œ 8 Ã‚Â°C', 'Shelf Life': '24 months' },
         features: ['Cellular regeneration', 'Deep skin repair', 'Anti-aging benefits', 'Post-treatment recovery', 'Professional-grade formula', 'Sterile packaging'],
         applications: ['Skin regeneration', 'Anti-aging programs', 'Post-laser recovery', 'Mesotherapy protocols', 'Face & neck rejuvenation']
       },
@@ -2646,7 +3071,7 @@
           'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1581092335876-4b5a2c6c4b4b?w=800&auto=format&fit=crop'
         ],
-        specs: { 'Type': 'Regenerative complex + PPT', 'Volume': '5 ml / 10 ml vials', 'Composition': 'Growth factors + PPT + HA', 'Usage': 'Professional only', 'Storage': '2 – 8 °C', 'Shelf Life': '24 months' },
+        specs: { 'Type': 'Regenerative complex + PPT', 'Volume': '5 ml / 10 ml vials', 'Composition': 'Growth factors + PPT + HA', 'Usage': 'Professional only', 'Storage': '2 Ã¢â‚¬â€œ 8 Ã‚Â°C', 'Shelf Life': '24 months' },
         features: ['Platelet-poor plasma technology', 'Advanced cellular renewal', 'Superior hydration', 'Improves skin elasticity', 'Hair restoration support', 'Professional use only'],
         applications: ['Skin rejuvenation', 'Hair restoration', 'Wound healing', 'Anti-aging treatments', 'Mesotherapy']
       }
@@ -2991,7 +3416,7 @@
       if (e.target === e.currentTarget) closeQuoteModal();
     });
 
-    /* ============ AI ASSISTANT — REAL AI BACKEND ============ */
+    /* ============ AI ASSISTANT Ã¢â‚¬â€ REAL AI BACKEND ============ */
     (function() {
       const aiToggle = document.getElementById('aiToggle');
       const aiPanel = document.getElementById('aiPanel');
@@ -3054,7 +3479,7 @@
         } catch (err) {
           console.error('DDS AI error:', err);
           hideTyping();
-          addBotMessage(`I’m temporarily unable to connect to the AI service. Please try again, or <a href="#" onclick="aiOpenQuote(); return false;">request a quote</a> directly.<br><br><small style="opacity:.75">If you are the website administrator, check that <strong>/api/chat</strong> is deployed and your AI API key is configured on the server.</small>`);
+          addBotMessage(`IÃ¢â‚¬â„¢m temporarily unable to connect to the AI service. Please try again, or <a href="#" onclick="aiOpenQuote(); return false;">request a quote</a> directly.<br><br><small style="opacity:.75">If you are the website administrator, check that <strong>/api/chat</strong> is deployed and your AI API key is configured on the server.</small>`);
         } finally {
           busy = false;
           aiSend.disabled = false;
@@ -3206,7 +3631,54 @@
   }
 
   setInterval(nextSlide, interval);
-})();</script>
+})();
+
+/* ============ LUXURY PRODUCT CARDS RENDER ============ */
+(function() {
+  const grid = document.getElementById('luxGrid');
+  if (!grid || typeof productsDB === 'undefined') return;
+
+  // Model image used on EVERY card (change this URL if you want a different model)
+  const MODEL_IMG = 'https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=900&auto=format&fit=crop';
+
+  function renderCards(filter) {
+    const keys = Object.keys(productsDB).filter(k => {
+      if (!filter || filter === 'all') return true;
+      return productsDB[k].category === filter;
+    });
+
+    grid.innerHTML = keys.map(key => {
+      const p = productsDB[key];
+      const feats = (p.features || []).slice(0, 6);
+      return `
+        <div class="lux-card">
+          <div class="lux-card-text">
+            <h3 class="lux-card-title">${p.name}</h3>
+            <p class="lux-card-desc">${p.short}</p>
+            <div class="lux-features">
+              ${feats.map(f => `<div class="lux-feature"><i class="fas fa-check"></i> ${f}</div>`).join('')}
+            </div>
+            <button class="lux-view-btn" onclick="openProductDetail('${key}')">View Details <i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div class="lux-card-image">
+            <img src="${MODEL_IMG}" alt="${p.name}" loading="lazy">
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  renderCards('all');
+
+  document.querySelectorAll('.lux-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.lux-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderCards(btn.dataset.filter);
+    });
+  });
+})();
+  </script>
   <!-- ============ AI ASSISTANT ============ -->
 <button class="ai-toggle" id="aiToggle" aria-label="Open AI Assistant">
   <i class="fas fa-robot"></i>
@@ -3228,7 +3700,7 @@
   <div class="ai-messages" id="aiMessages">
     <div class="ai-msg ai-msg-bot">
       <div class="ai-msg-bubble">
-        Hello! 👋 I'm the DDS AI Assistant. I can help you find products, compare equipment, or answer questions about our aesthetic range. What are you looking for?
+        Hello! Ã°Å¸â€˜â€¹ I'm the DDS AI Assistant. I can help you find products, compare equipment, or answer questions about our aesthetic range. What are you looking for?
       </div>
       <div class="ai-quick-replies">
         <button onclick="aiQuickReply('Show me laser products')">Laser products</button>
@@ -3243,7 +3715,28 @@
     <input type="text" id="aiInput" placeholder="Ask about products, prices, availability..." autocomplete="off">
     <button id="aiSend" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
   </div>
-  <div class="ai-footer-note">Powered by BDS · For quotes, we hand off to WhatsApp</div>
+  <div class="ai-footer-note">Powered by BDS Ã‚Â· For quotes, we hand off to WhatsApp</div>
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
